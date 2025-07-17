@@ -1,0 +1,65 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import '../styles/web/inter.css'
+
+interface Props {
+    title?: string;
+	email_id?: string;
+}
+const { title, email_id  } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<!-- HTML Meta Tags -->
+		<title>{title} / sanket's</title>
+		<meta name="description" content="Contains links useful to my students and me on occasion.">
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://a115.xyz/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Sanket's Homepage">
+		<meta property="og:description" content="Contains links useful to my students and me on occasion.">
+		<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/9b70399a-d1e9-4312-a598-3465a0ec0f7c.png?token=gtl-gzIwEocVROzVEsT17gvx58L_26mEa6jB_Na_WTM&height=100&width=191&expires=33288338120">
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="a115.xyz">
+		<meta property="twitter:url" content="https://a115.xyz/">
+		<meta name="twitter:title" content="Sanket's Homepage">
+		<meta name="twitter:description" content="Contains links useful to my students and me on occasion.">
+		<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/9b70399a-d1e9-4312-a598-3465a0ec0f7c.png?token=gtl-gzIwEocVROzVEsT17gvx58L_26mEa6jB_Na_WTM&height=100&width=191&expires=33288338120">
+
+		<!-- Meta Tags Generated via https://www.opengraph.xyz -->	
+	</head>
+	<body class="m-5 text-slate-950 bg-slate-50 dark:bg-slate-950 dark:text-slate-50 font-sans max-w-7xl">
+		<Navbar header_text={title}/>
+		<main><slot/></main>
+		<Footer email={email_id}/>
+	</body>
+  	<style>
+		@import url('../styles/web/inter.css');
+
+		html, body {
+			font-family: "Inter", helvetica;
+			overflow: -moz-scrollbars-none;
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;     /* Firefox */
+		}
+		/* Chrome, Safari, Opera */
+		html::-webkit-scrollbar,
+		body::-webkit-scrollbar {
+			display: none;
+			width: 0 !important;
+			background: transparent;
+		}
+	</style>
+</html>

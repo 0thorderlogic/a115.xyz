@@ -1,0 +1,70 @@
+@import "tailwindcss";
+       
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 450;
+}
+
+.normal-text {
+  @apply text-base md:text-xl lg:text-2xl;
+}
+
+.large-text {
+  @apply text-3xl md:text-5xl lg:text-6xl;
+}
+
+.largest-text {
+  @apply text-4xl md:text-6xl lg:text-7xl;
+}
+
+.testimonials li{
+  @apply text-lg dark:bg-slate-900 lg:text-xl mt-10 p-5 bg-slate-200 ;
+}
+
+.testimonials li p {
+  @apply font-light;
+}
+
+.testimonials li .text-base {
+  @apply text-base md:text-xl lg:text-2xl text-rose-500 text-right;
+}
+
+hr {
+  border:0;
+    border-bottom: 1px solid var(--color-gray-300);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    hr {
+      border-bottom: 1px solid var(--color-gray-700);
+    }
+}
+
+a {
+  color: var(--color-rose-500);
+}
+
+a:hover { 
+  color: var(--color-orange-500);
+  animation: color 1s ease-in-out;
+}
+
+.accent {
+  color: var(--color-rose-500);
+}
+
+div {
+  margin: 10px 0px;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

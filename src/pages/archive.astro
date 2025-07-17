@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import fs from 'fs';
+import path from 'path';
+
+const email_id = "aryan115csphy@gmail.com";
+const java24Dir = path.resolve('./public/java24');
+let files: any[] = [];
+try {
+  files = fs.readdirSync(java24Dir)
+    .filter(file => file.endsWith('.pdf'));
+} catch (e) {
+  files = [];
+}
+---
+
+<Layout email_id={email_id} title="archive">
+	<span class="sm:grid sm:grid-rows-2 sm:gap-10 md:flexbox md:grid md:grid-cols-2">
+		<div>
+			<p class="largest-text font-medium">CS/APT/24</p>
+			<p class="arrow-right largest-text sm:collapse md:visible lg:visible">→</p>		
+			<p class="arrow-down largest-text sm:visible md:collapse lg:collapse">↓</p>		
+		</div>
+
+		<div>
+		{files.map(file => (
+			<p class="normal-case normal-text mb-5"><a 
+				href={`/java24/${file}`} 
+				target="_blank"
+			>
+				{file.replace('.pdf', '').replace(/-/g, ' ')}
+			</a></p>
+		))}
+		</div>
+	</span>
+	<style>
+		@media (max-width: 640px) {
+			.arrow-right {
+				outline: auto;
+				visibility: collapse;
+			}
+		}
+	</style>
+</Layout>
