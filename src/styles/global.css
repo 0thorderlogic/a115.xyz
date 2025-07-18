@@ -7,6 +7,10 @@ html {
   font-weight: 450;
 }
 
+:root {
+  --my-marker: "-> ";
+}
+
 .normal-text {
   @apply text-base md:text-xl lg:text-2xl;
 }
@@ -25,10 +29,6 @@ html {
 
 .testimonials li p {
   @apply font-light;
-}
-
-.testimonials li .text-base {
-  @apply text-base md:text-xl lg:text-2xl text-rose-500 text-right;
 }
 
 hr {
