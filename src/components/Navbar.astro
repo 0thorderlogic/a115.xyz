@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 ---
-<ul class="mb-10 flex items-center justify-between w-full">
+<ul class="font-light mb-10 flex items-center justify-between w-full">
     <p class="text-slate-950 dark:text-slate-50 "><a href="/" class="dark:text-slate-50 text-slate-950">sanket's</a></p>
     <span class="lowercase flex space-x-4 flex-row items-center">
         {navLinks.map(link => (
@@ -24,14 +24,8 @@ const navLinks = [
     </span>
 </ul>
 <style>
-    * {
-        font-weight: 400;
-    }
     p a {
         color: var(--color-text);
         text-decoration: none;
-    }
-    span {
-        font-family: var(--font-sans);
     }
 </style>

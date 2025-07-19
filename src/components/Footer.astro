@@ -6,10 +6,10 @@ const { email } = Astro.props;
 
 ---
 <hr class="mt-10 dark:bg-gray-700"/>
-<div class="text-1xl grid grid-cols-2 grid-rows-1">
-    <p>
+<div class="font-light grid grid-cols-2 grid-rows-1">
+    <p class="font-mono">
         <a href=`mailto:${email}`>{email}</a><br/>
-        Last updated: <span id="last-updated"></span></i></pre>
+        <span class="grey">Last updated: <span id="last-updated"></span></span>
     </p>
     <p class="text-right">
         <a href="./0x7BC1D368-pub.asc">pgp</a><br/>
@@ -17,12 +17,7 @@ const { email } = Astro.props;
         <a href="https://github.com/0thorderlogic/website">source</a><br/>
     </p>
 </div>
-<hr class="dark:bg-gray-700"/>
-<style>
-    * {
-        font-weight: 400;
-    }
-</style>
+<hr/>
 <script>
     const lastUpdatedElem = document.getElementById('last-updated');
     if (lastUpdatedElem) {
