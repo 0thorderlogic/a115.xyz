@@ -4,57 +4,84 @@ const email_id = "aoneone5@protonmail.com";
 ---
 
 <Layout email_id={email_id} title="homepage">
-   <main class="font-light lowercase text-lg py-10">
-      <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">l/h,ylitmygn</h2>
-      <h1 class="mb-3">
-         I'm the ceo of <a
-            href="https://boxed.love"
-            target="_blank"
-            class="text-rose-500 hover:text-orange-500 transition-colors"
-            >boxed.love</a
+   <main class="py-16 md:py-24 space-y-20">
+      <section>
+         <h2
+            class="text-[10px] font-bold text-rose-500 uppercase tracking-[0.2em] mb-6"
          >
-      </h1>
-      <p class="mb-3">
-         I also work at the technology innovation hub at <a
-            href="https://www.isical.ac.in"
-            target="_blank"
-            class="text-rose-500 hover:text-orange-500 transition-colors"
-            >isi, calcutta</a
+            status / current
+         </h2>
+         <h1
+            class="text-5xl md:text-7xl font-display font-medium leading-[1.1] mb-6 -ml-0.5"
          >
-      </p>
-      <p class="mb-3">
-         On weekends, I teach kids  at <a
-            href="https://aptutorial.org"
-            class="text-rose-500 hover:text-orange-500 transition-colors"
-            >ap-tutorials</a
-         >   or online.
-      </p>
+            ceo of <a
+               href="https://boxed.love"
+               target="_blank"
+               class="text-rose-500 hover:text-rose-600 transition-all duration-300 underline decoration-4 underline-offset-8 decoration-rose-500/30 hover:decoration-rose-500"
+               >boxed.love</a
+            >
+         </h1>
+      </section>
+
+      <section class="max-w-xl">
+         <h2
+            class="text-[10px] font-bold text-rose-500 uppercase tracking-[0.2em] mb-6"
+         >
+            work / info
+         </h2>
+         <div
+            class="space-y-6 text-xl leading-relaxed text-slate-700 dark:text-slate-300"
+         >
+            <p>
+               I also work at the technology innovation hub at <a
+                  href="https://www.isical.ac.in"
+                  target="_blank"
+                  class="font-medium text-slate-950 dark:text-white hover:text-rose-500 transition-colors underline decoration-1 underline-offset-4"
+                  >isi, calcutta</a
+               >
+            </p>
+            <p>
+               On weekends, I teach kids at <a
+                  href="https://aptutorial.org"
+                  class="font-medium text-slate-950 dark:text-white hover:text-rose-500 transition-colors underline decoration-1 underline-offset-4"
+                  >ap-tutorials</a
+               > or online.
+            </p>
+         </div>
+      </section>
+
+      <hr class="opacity-50" />
+
+      <section>
+         <h2
+            class="text-[10px] font-bold text-rose-500 uppercase tracking-[0.2em] mb-12"
+         >
+            projects / cool shit
+         </h2>
+         <div class="grid grid-cols-1 gap-12">
+            <div class="group">
+               <a
+                  href="https://0thorderlogic.github.io/sense"
+                  class="text-2xl font-display font-bold block group-hover:text-rose-500 transition-colors mb-2"
+                  >Drone Part Picker</a
+               >
+               <p class="text-slate-600 dark:text-slate-400 max-w-md">
+                  A comprehensive tool for building and optimizing drones,
+                  similar to PC Part Picker.
+               </p>
+            </div>
+            <div class="group">
+               <a
+                  href="https://0thorderlogic.github.io/sense"
+                  class="text-2xl font-display font-bold block group-hover:text-rose-500 transition-colors mb-2"
+                  >Sense</a
+               >
+               <p class="text-slate-600 dark:text-slate-400 max-w-md">
+                  Converting online text into tactile braille to improve
+                  real-time web accessibility.
+               </p>
+            </div>
+         </div>
+      </section>
    </main>
-   <article>
-      <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">cool shit</h2>
-      <ul class="list-decimal list-inside">
-         <li class="mb-3">
-            <a
-               href="https://0thorderlogic.github.io/sense"
-               class="text-rose-500 hover:text-orange-500 transition-colors"
-               >Drone Part Picker</a
-            >: PC Part Picker but for drones
-         </li>
-         <li class="mb-3">
-            <a
-               href="https://0thorderlogic.github.io/sense"
-               class="text-rose-500 hover:text-orange-500 transition-colors"
-               >Sense</a
-            >: Real-Time Web Accessibility: Converting Online Text into Tactile
-            Braille.
-         </li>
-      </ul>
-      <div class="w-full mt-8">
-         <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">calendar</h2>
-         <iframe
-            src="https://calendar.google.com/calendar/embed?src=aryan115csphy%40gmail.com&ctz=Asia%2FKolkata&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York"
-            class="w-full h-[600px]"
-         ></iframe>
-      </div>
-   </article>
 </Layout>
