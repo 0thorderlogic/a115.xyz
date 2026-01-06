@@ -1,24 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const email_id="aoneone5@protonmail.com"
+import Layout from "../layouts/Layout.astro";
+const email_id = "aoneone5@protonmail.com";
 ---
+
 <Layout email_id={email_id} title="homepage">
-   <span>
-	<!-- love or hate, you live in the middle you get nothing  -->
-      <span class="font-mono uppercase font-light grey">l/h,ylitmygn</span><br/>
-      <header class="flex items-center">
-         <p class="font-medium largest-text">CAPT, 31<sup>st</sup> aqdiv</p>
-      </header>
-      <div class="pt-10 pb-10 grid grid-cols-1 gap-5 sm:p-0 sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:gap-5">
-         <p class="normal-text font-light">Some people also call me Aryan much to my despair.</p>
-         <p class="normal-text font-light">I once made a map for <a href="/assets/map-aryan-singh.pdf">Kolkata Metro &UpperRightArrow;</a></p>
+   <main class="font-light lowercase text-lg py-10">
+      <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">l/h,ylitmygn</h2>
+      <h1 class="mb-3">
+         I'm the ceo of <a
+            href="https://boxed.love"
+            target="_blank"
+            class="text-rose-500 hover:text-orange-500 transition-colors"
+            >boxed.love</a
+         >
+      </h1>
+      <p class="mb-3">
+         I also work at the technology innovation hub at <a
+            href="https://www.isical.ac.in"
+            target="_blank"
+            class="text-rose-500 hover:text-orange-500 transition-colors"
+            >isi, calcutta</a
+         >
+      </p>
+      <p class="mb-3">
+         On weekends, I teach kids  at <a
+            href="https://aptutorial.org"
+            class="text-rose-500 hover:text-orange-500 transition-colors"
+            >ap-tutorials</a
+         >   or online.
+      </p>
+   </main>
+   <article>
+      <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">cool shit</h2>
+      <ul class="list-decimal list-inside">
+         <li class="mb-3">
+            <a
+               href="https://0thorderlogic.github.io/sense"
+               class="text-rose-500 hover:text-orange-500 transition-colors"
+               >Drone Part Picker</a
+            >: PC Part Picker but for drones
+         </li>
+         <li class="mb-3">
+            <a
+               href="https://0thorderlogic.github.io/sense"
+               class="text-rose-500 hover:text-orange-500 transition-colors"
+               >Sense</a
+            >: Real-Time Web Accessibility: Converting Online Text into Tactile
+            Braille.
+         </li>
+      </ul>
+      <div class="w-full mt-8">
+         <h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">calendar</h2>
+         <iframe
+            src="https://calendar.google.com/calendar/embed?src=aryan115csphy%40gmail.com&ctz=Asia%2FKolkata&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York"
+            class="w-full h-[600px]"
+         ></iframe>
       </div>
-      <div class="grid grid-cols-1 grid-rows-2 sm:grid sm:grid-cols-2">
-         <h2>
-            <span class="font-mono uppercase font-light grey">making education modular</span><br/>
-            <a class="large-text font-bold accent" href="/ffp">From, First Principle</a>
-         </h2>
-         <p class="normal-text font-light">"f,fp" or "FFP" is an institute laid down by me and my parterns. That aims to make Indian, engineering at the lowest of colleges suck just a little bit less. Estd in 2025.</p>
-      </div>
-   </span>
+   </article>
 </Layout>

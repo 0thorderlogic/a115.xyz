@@ -1,50 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import fs from 'fs';
-import path from 'path';
+import Layout from "../layouts/Layout.astro";
+import fs from "fs";
+import path from "path";
 
-const email_id = "aryan115csphy@gmail.com";
-const java24Dir = path.resolve('./public/java24');
+const email_id = "aoneone5@protonmail.com";
+const java24Dir = path.resolve("./public/java24");
 let files: any[] = [];
 try {
-  files = fs.readdirSync(java24Dir)
-    .filter(file => file.endsWith('.pdf'));
+	files = fs.readdirSync(java24Dir).filter((file) => file.endsWith(".pdf"));
 } catch (e) {
-  files = [];
+	files = [];
 }
 ---
 
 <Layout email_id={email_id} title="archive">
-	<div class="sm:flexbox sm:grid sm:grid-cols-2 sm:gap-15">
-		<div>
-			<p class="largest-text font-medium">
-				CS/APT/24<br/>
-				<span class="arrow-down font-light largest-text rotate-90 sm:rotate-0 md:rotate-0 lg:rotate-0 xl:rotate-0 fixed">
-					->
-				</span>
-			</p>	
-		</div>
+	<main class="font-light lowercase text-lg py-10">
+		<h1 class="text-4xl mb-3">archive</h1>
+		<p class="mb-3">
+			this could be a lot of things but it is sadly nothing more than a
+			glorified dumping ground
+		</p>
+	</main>
 
-		<div class="m-0 mt-15 sm:mt-0">
-		{files.map(file => (
-			<p class="normal-case normal-text mb-5">
-			<a 
-				class="capitalize"
-				href={`/java24/${file}`} 
-				target="_blank"
-			>
-				{file.replace('.pdf', '').replace(/-/g, ' ')}
-			</a>
-			</p>
-		))}
-		</div>
-	</div>
-	<style>
-		@media (max-width: 640px) {
-			.arrow-right {
-				outline: auto;
-				visibility: collapse;
+	<article>
+		<h2 class="font-mono text-gray-300 uppercase mb-3 text-lg">
+			CS/APT/24
+		</h2>
+		<ul class="list-decimal list-inside font-light text-lg">
+			{
+				files.map((file) => (
+					<li class="mb-3">
+						<a
+							class="lowercase text-rose-500 hover:text-orange-500 transition-colors"
+							href={`/java24/${file}`}
+							target="_blank"
+						>
+							{file.replace(".pdf", "").replace(/-/g, " ")}
+						</a>
+					</li>
+				))
 			}
-		}
-	</style>
+		</ul>
+	</article>
 </Layout>

@@ -3,24 +3,38 @@ interface Props {
     email?: string;
 }
 const { email } = Astro.props;
-
 ---
-<hr class="mt-10 dark:bg-gray-700"/>
-<div class="font-light grid grid-cols-2 grid-rows-1">
+
+<hr class="mt-10 dark:bg-gray-700" />
+<div class="grid grid-cols-2 grid-rows-1 lowercase py-2.5">
     <p>
-        <a href=`mailto:${email}`>{email}</a><br/>
-        <span class="grey font-mono uppercase">Last updated: <span id="last-updated"></span></span>
+        <a
+            href=`mailto:${email}`
+            class="text-rose-500 hover:text-orange-500 transition-colors"
+            >{email}</a
+        ><br />
+        <span class="opacity-70"
+            >Last updated: <span id="last-updated"></span></span
+        >
     </p>
     <p class="text-right">
-        <a href="./0x7BC1D368-pub.asc">pgp</a><br/>
-        <a href="/sitemap-index.xml">sitemap</a><br/>
-        <a href="https://github.com/0thorderlogic/website">source</a><br/>
+        <a
+            href="./0x7BC1D368-pub.asc"
+            class="text-rose-500 hover:text-orange-500 transition-colors">pgp</a
+        ><br />
+        <a
+            href="https://github.com/0thorderlogic/website"
+            class="text-rose-500 hover:text-orange-500 transition-colors"
+            >source</a
+        ><br />
     </p>
 </div>
-<hr/>
+<hr />
 <script>
-    const lastUpdatedElem = document.getElementById('last-updated');
+    const lastUpdatedElem = document.getElementById("last-updated");
     if (lastUpdatedElem) {
-        lastUpdatedElem.textContent = new Date(document.lastModified).toLocaleDateString();
+        lastUpdatedElem.textContent = new Date(
+            document.lastModified,
+        ).toLocaleDateString();
     }
 </script>
