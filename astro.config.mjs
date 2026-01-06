@@ -4,10 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  vite: {   
-      plugins: [tailwindcss()],  
+  vite: {
+    plugins: [tailwindcss()],
   },
-  site: 'https://a115.xyz',
+  site: "https://a115.xyz",
 
   integrations: [sitemap()],
 });
