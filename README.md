@@ -1,8 +1,6 @@
-# Man-page Website Theme
+# a115.xyz
 
-A website theme I made in astro (with codex, claude, and some other models) the base code is however written by me, but the code in `calender.astro` and `archive.astro` are very ai first me not-at-all-if-any. 
-
-I have had instructions laid out here for anyone wanting to use this, if something doesn't work contact me. <singh@a115.xyz>
+Personal website built on the [man-pages](https://github.com/0thorderlogic/man-pages) Astro theme.
 
 ## Features
 - **Gruvbox Color Palette:** Full integration with Tailwind v4 `@theme` block. Use classes like `bg-gruv-bg0-s`, `text-gruv-yellow`, `border-gruv-red`, etc.
@@ -12,21 +10,35 @@ I have had instructions laid out here for anyone wanting to use this, if somethi
 - **Archive Page:** Easily list academic papers, PDFs, or external links grouped by year via a simple JSON mapping (`/archive`).
 - **RSS Feed:** Auto-generated RSS feed for your journal entries.
 
+---
+
 ## Setup & Usage
 
-### 1. Installation
-Clone the repository and install dependencies:
+### 1. Clone and Install
 ```bash
+git clone https://github.com/0thorderlogic/a115.xyz
+cd a115.xyz
 npm install
 ```
 
-### 2. Configure Environment Variables
+### 2. Add the theme remote (for pulling upstream updates)
+The theme lives in a separate repo. Add it as a remote so you can pull changes later:
+```bash
+git remote add theme https://github.com/0thorderlogic/man-pages
+```
+
+To pull theme updates in the future:
+```bash
+git pull theme master
+```
+
+### 3. Configure Environment Variables
 To make the `/calendar` page work, you need a Google Calendar API key.
 Copy the `.env.example` file to `.env`:
 ```bash
 cp .env.example .env
 ```
-Open `.env` and configure your keys. 
+Open `.env` and configure your keys.
 
 **How to get a Google API Key:**
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
@@ -53,11 +65,11 @@ Open `.env` and configure your keys.
 
 Grid event chips are intentionally non-clickable. To open a Google Calendar link, click a day to open the modal, then click **View in Calendar**.
 
-### 3. Customizing Your Info
+### 4. Customizing Your Info
 - Open `consts.ts` in the root directory and update the `name`, `lastname`, and overall website metadata.
 - Open `src/content/navbar.json` to change the links in your top navigation bar.
 
-### 4. Writing Blog Posts
+### 5. Writing Blog Posts
 Navigate to `src/content/journal/`. Create a new `.md` file with the following frontmatter:
 ```markdown
 ---
@@ -69,7 +81,7 @@ Write your markdown content here...
 ```
 The post will automatically appear on the `/journal` page and be added to the RSS feed.
 
-### 5. Managing the Archive
+### 6. Managing the Archive
 To add PDFs or links to the `/archive` page:
 1. Put any PDF files in `public/pdfs/`.
 2. Open `src/content/archive.json`.
@@ -84,10 +96,12 @@ To add PDFs or links to the `/archive` page:
 ```
 The Archive page will automatically parse the dates and group them by year.
 
-### 6. Styling
+### 7. Styling
 All custom colors are defined in `src/styles/global.css` under the `@theme` block. You can change these hex codes to adjust the core appearance of the website while keeping the same class names.
 
-## 💻 Commands
+---
+
+## Commands
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
