@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+
+  /* 
+    Credits to: @morhetz
+    https://github.com/morhetz/gruvbox
+
+    -- is this enough? should I do more? idk. 
+  */
+
+  --color-gruv-bg: #282828;
+  --color-gruv-bg0-s: #1d2021;
+  --color-gruv-fg: #ebdbb2;
+
+  /* Top Row (Standard/Darker) */
+  --color-gruv-red: #cc241d;
+  --color-gruv-green: #98971a;
+  --color-gruv-yellow: #d79921;
+  --color-gruv-blue: #458588;
+  --color-gruv-purple: #b16286;
+  --color-gruv-aqua: #689d6a;
+  --color-gruv-gray: #a89984;
+  --color-gruv-orange: #d65d0e;
+
+  /* Bottom Row (Bright/Lighter) */
+  --color-gruv-gray-light: #928374;
+  --color-gruv-red-light: #fb4934;
+  --color-gruv-green-light: #b8bb26;
+  --color-gruv-yellow-light: #fabd2f;
+  --color-gruv-blue-light: #83a598;
+  --color-gruv-purple-light: #d3869b;
+  --color-gruv-aqua-light: #8ec07c;
+  --color-gruv-orange-light: #fe8019;
+
+  /* font */
+  --font-sans: Helvetica, Arial;
+  --font-mono: monospace;
+}
+
+
+a {
+  /* font-family: 'Courier New', Courier, monospace; */
+  text-decoration: underline;
+  color: var(--color-gruv-green-light);
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-gruv-green);
+}
+
+@layer base {
+  body {
+    @apply bg-gruv-bg text-gruv-fg font-sans;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+}
+
+@layer components {
+  .title-1 {
+    @apply text-2xl text-gruv-yellow-light font-normal font-mono mb-3;
+  }
+
+  .title-2 {
+    @apply text-xl text-gruv-blue-light font-mono mb-2;
+  }
+
+  .title-3 {
+    @apply text-lg text-gruv-purple-light font-mono mb-1;
+  }
+}

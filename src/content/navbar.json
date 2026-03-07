@@ -1,0 +1,20 @@
+{
+  "links": [
+    {
+      "name": "Home",
+      "href": "/"
+    },
+    {
+      "name": "Journal",
+      "href": "/journal"
+    },
+    {
+      "name": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "name": "Archive",
+      "href": "/archive"
+    }
+  ]
+}

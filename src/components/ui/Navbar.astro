@@ -1,0 +1,23 @@
+---
+import navData from "../../content/navbar.json";
+
+const { links } = navData;
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="mt-4">
+  <ul class="flex flex-wrap gap-2 md:gap-3">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="font-mono px-1.5 bg-gruv-orange-light! text-gray-950! no-underline! transition-colors text-sm md:text-base"
+            href={link.href}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

@@ -1,0 +1,24 @@
+---
+import { name, lastname } from "../../../consts";
+---
+
+<footer
+  class="mt-auto py-6 text-sm text-center text-gruv-gray border-t border-gruv-gray/20"
+>
+  <div
+    class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-90"
+  >
+    <p class="m-0">
+      Copyleft {name}
+      {lastname} (2016-2026)
+    </p>
+    <a
+      href="https://github.com/0thorderlogic/man-pages"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2 hover:text-gruv-fg transition-colors no-underline"
+    >
+      Source
+    </a>
+  </div>
+</footer>
