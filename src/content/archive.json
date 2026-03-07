@@ -1,2 +1,92 @@
 [
+  {
+    "title": "SENSE Final Year Project (PPT)",
+    "url": "/pdfs/2025/SENSE-finalyear-project-ppt.pdf",
+    "description": "Presentation slides for the SENSE final year project.",
+    "date": "2025-01-05"
+  },
+  {
+    "title": "Java Data Types",
+    "url": "/pdfs/2025/java-data-types.pdf",
+    "description": "Quick reference notes on Java data types.",
+    "date": "2025-01-12"
+  },
+  {
+    "title": "Number System",
+    "url": "/pdfs/2025/numbersystem.pdf",
+    "description": "Study material on number systems and representation.",
+    "date": "2025-01-19"
+  },
+  {
+    "title": "Python: What Is List",
+    "url": "/pdfs/2025/python-what%20is%20list.pdf",
+    "description": "Introductory notes on Python lists.",
+    "date": "2025-01-26"
+  },
+  {
+    "title": "Probability Formulas (NASA)",
+    "url": "/pdfs/2025/210624-probability-formulas-nasa.pdf",
+    "description": "Probability formulas and reference sheet.",
+    "date": "2025-02-02"
+  },
+  {
+    "title": "APT: Computer Science Fundamentals",
+    "url": "/pdfs/2025/apt/computer-science-fundamentals.pdf",
+    "description": "APT notes covering core computer science fundamentals.",
+    "date": "2025-02-09"
+  },
+  {
+    "title": "APT: Computer Science Notes",
+    "url": "/pdfs/2025/apt/computer-science-notes.pdf",
+    "description": "APT notes for computer science concepts.",
+    "date": "2025-02-16"
+  },
+  {
+    "title": "APT: Control Flow Notes",
+    "url": "/pdfs/2025/apt/control-flow-notes.pdf",
+    "description": "APT notes on control flow basics.",
+    "date": "2025-02-23"
+  },
+  {
+    "title": "APT: HCF and LCM Notes",
+    "url": "/pdfs/2025/apt/hcf-lcm-notes.pdf",
+    "description": "APT problem-solving notes for HCF and LCM.",
+    "date": "2025-03-02"
+  },
+  {
+    "title": "APT: Java Basics",
+    "url": "/pdfs/2025/apt/java-basics.pdf",
+    "description": "APT notes on Java language basics.",
+    "date": "2025-03-09"
+  },
+  {
+    "title": "APT: Java Data Types and Operators",
+    "url": "/pdfs/2025/apt/java-data-types-and-operators.pdf",
+    "description": "APT notes on Java data types and operators.",
+    "date": "2025-03-16"
+  },
+  {
+    "title": "APT: Java For Loop Notes",
+    "url": "/pdfs/2025/apt/java-for-loop-notes.pdf",
+    "description": "APT practice notes for Java for-loop patterns.",
+    "date": "2025-03-23"
+  },
+  {
+    "title": "APT: Java Truth Tables and Typecasting",
+    "url": "/pdfs/2025/apt/java-truth-tables-typecasting.pdf",
+    "description": "APT notes on logic truth tables and Java typecasting.",
+    "date": "2025-03-30"
+  },
+  {
+    "title": "APT: Notes 3 - Control Flow",
+    "url": "/pdfs/2025/apt/notes-3-control-flow.pdf",
+    "description": "APT notes set 3 focused on control flow.",
+    "date": "2025-04-06"
+  },
+  {
+    "title": "APT: OOP Concepts",
+    "url": "/pdfs/2025/apt/oop-concepts.pdf",
+    "description": "APT notes introducing object-oriented programming concepts.",
+    "date": "2025-04-13"
+  }
 ]

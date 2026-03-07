@@ -2,12 +2,21 @@
 import "../styles/global.css";
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  ogType?: "website" | "article";
 }
 
-import { name } from "../../consts";
+import { name, url } from "../../consts";
 import Navbar from "../components/ui/Navbar.astro";
 import Footer from "../components/ui/Footer.astro";
-const { title } = Astro.props;
+const { title, description, image = "/images/linkpreview.png", ogType = "website" } =
+  Astro.props;
+const siteUrl = Astro.site?.toString() ?? url;
+const pageTitle = `${name}'s ${title}`;
+const pageDescription = description ?? "Personal website and journal.";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const previewImageUrl = new URL(image, siteUrl).toString();
 ---
 
 <html lang="en">
@@ -17,7 +26,20 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{name}{" "}{title}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={`${name}'s Website`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={previewImageUrl} />
+    <meta property="og:image:alt" content={pageTitle} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={previewImageUrl} />
+    <title>{pageTitle}</title>
   </head>
   <body>
     <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5">
