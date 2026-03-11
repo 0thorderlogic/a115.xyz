@@ -5,9 +5,9 @@ import Layout from "../layout/Layout.astro";
 <Layout title="Homepage">
 	<section class="max-w-3xl space-y-8">
 		<div class="space-y-3">
-			<h2 class="title-2">
-				Hello, I'm Aryan (sanket) Singh, welcome to my homepage
-			</h2>
+			<!-- <h2 class=""> -->
+				<!-- Hello, I'm Aryan (sanket) Singh, welcome to my homepage -->
+			<!-- </h2> -->
 			<p>
 				I'm the co-founder of <a
 					href="https://boxed.love"
@@ -15,18 +15,23 @@ import Layout from "../layout/Layout.astro";
 				>
 			</p>
 			<p>
-				While I also work at the <a
-					href="https://nmicps.gov.in"
-					target="_blank">Technology Innovation Lab</a
-				> @ <a href="https://www.isical.ac.in" target="_blank"
-					>Indian Statistical Institute, Kolkata</a
-				>
+				I'm also an Embedded Systems Researcher at <a
+					href="https://neuroailabs.in/"
+					target="_blank">Neuro AI Labs</a
+				><sup><a href="#2">[2]</a></sup>
 			</p>
-			<p>more <sup>[1]</sup></p>
+
+			<p>more <sup><a href="#1">[1]</a></sup></p>
 		</div>
 		<div class="space-y-2">
-			<h3 class="title-3">In the past I was doing:</h3>
+			<h3 class="title-3">In the past I was:</h3>
 			<ol>
+				<li>
+					I used to work at the <a
+						href="https://www.isical.ac.in"
+						target="_blank">Indian Statistical Institute, Kolkata</a
+					><sup>[2]</sup>
+				</li>
 				<li>
 					Teaching Mathematics to many, many of kids around the globe
 				</li>
@@ -69,7 +74,10 @@ import Layout from "../layout/Layout.astro";
 					<span class="warn">[wishlist, goes to amazon.in]</span>
 				</li>
 				<li>
-					If you like this website you can use the theme I made on <a href="https://github.com/0thorderlogic/man-pages" target="_blank">github</a> you can follow the instruction on <code>README.md</code>
+					If you like this website you can use the theme I made on <a
+						href="https://github.com/0thorderlogic/man-pages"
+						target="_blank">github</a
+					> you can follow the instruction on <code>README.md</code>
 				</li>
 			</ol>
 		</div>
@@ -116,10 +124,16 @@ import Layout from "../layout/Layout.astro";
 		</div>
 		<div class="space-y-2">
 			<h3 class="title-3">Footnotes</h3>
-			<sub class="text-base opacity-80"><sup>[1]</sup>
-				When something interesting comes along, I will write it here. (I
-				promise.)
+			<div class="text-sm opacity-80">
+			<sub id="#2"
+				><sup>[2]</sup>
+				As of March 31<sup>st</sup>, 2026
+			</sub><br />
+			<sub id="#1"
+				><sup>[1]</sup>
+				When something interesting comes along, I will write it here. (I promise.)
 			</sub>
+			</div>
 		</div>
 	</section>
 </Layout>
