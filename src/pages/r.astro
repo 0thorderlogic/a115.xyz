@@ -4,14 +4,14 @@ import Layout from "../layout/Layout.astro";
 
 const rawRedirects = redirectsData as Record<string, string>;
 const redirects = Object.fromEntries(
-    Object.entries(rawRedirects).filter(([, value]) => {
-        try {
-            const parsed = new URL(value);
-            return parsed.protocol === "http:" || parsed.protocol === "https:";
-        } catch {
-            return false;
-        }
-    }),
+  Object.entries(rawRedirects).filter(([, value]) => {
+    try {
+      const parsed = new URL(value);
+      return parsed.protocol === "http:" || parsed.protocol === "https:";
+    } catch {
+      return false;
+    }
+  }),
 ) as Record<string, string>;
 
 const key = Astro.url.searchParams.get("key");
@@ -21,61 +21,60 @@ const availableKeys = Object.keys(redirects).sort();
 const exampleKey = availableKeys[0] ?? "your-key";
 
 if (url) {
-    return Astro.redirect(url);
+  return Astro.redirect(url);
 }
 ---
 
 <Layout title="Redirect Page">
-    <div class="max-w-3xl space-y-6">
-        <p id="redirect-message" class={missingMessage ? "" : "hidden"}>
-            {missingMessage}
-        </p>
+  <div class="max-w-3xl space-y-6">
+    <p id="redirect-message" class={missingMessage ? "" : "hidden"}>
+      {missingMessage}
+    </p>
 
-        <div class="space-y-2">
-            <h2 class="title-2">How to use</h2>
-            <ol>
-                <li>
-                    Open this page with a key query parameter:{" "}
-                    <code>/r?key=&lt;key&gt;</code>.
-                </li>
-                <li>
-                    Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>.
-                </li>
-                <li>
-                    If the key exists, you will be redirected immediately. If it
-                    does not, this page will show an error and list valid keys
-                    below.
-                </li>
-            </ol>
-        </div>
-
-        <div class="space-y-2">
-            <h2 class="title-2">Available redirects</h2>
-            <ul>
-                {
-                    availableKeys.map((k) => (
-                        <li>
-                            <code>{k}</code> → <a href={redirects[k]}>{redirects[k]}</a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+    <div class="space-y-2">
+      <h2 class="title-2">How to use</h2>
+      <ol>
+        <li>
+          Open this page with a key query parameter:{" "}
+          <code>/r?key=&lt;key&gt;</code>.
+        </li>
+        <li>
+          Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>.
+        </li>
+        <li>
+          If the key exists, you will be redirected immediately. If it does not, this page will show
+          an error and list valid keys below.
+        </li>
+      </ol>
     </div>
 
-    <script is:inline define:vars={{ redirects }}>
-        const params = new URLSearchParams(window.location.search);
-        const redirectKey = params.get("key");
-        const destination = redirectKey ? redirects[redirectKey] : null;
-
-        if (destination) {
-            window.location.replace(destination);
-        } else if (redirectKey) {
-            const messageEl = document.getElementById("redirect-message");
-            if (messageEl) {
-                messageEl.classList.remove("hidden");
-                messageEl.textContent = `No redirect found for key: ${redirectKey}`;
-            }
+    <div class="space-y-2">
+      <h2 class="title-2">Available redirects</h2>
+      <ul>
+        {
+          availableKeys.map((k) => (
+            <li>
+              <code>{k}</code> → <a href={redirects[k]}>{redirects[k]}</a>
+            </li>
+          ))
         }
-    </script>
+      </ul>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ redirects }}>
+    const params = new URLSearchParams(window.location.search);
+    const redirectKey = params.get("key");
+    const destination = redirectKey ? redirects[redirectKey] : null;
+
+    if (destination) {
+      window.location.replace(destination);
+    } else if (redirectKey) {
+      const messageEl = document.getElementById("redirect-message");
+      if (messageEl) {
+        messageEl.classList.remove("hidden");
+        messageEl.textContent = `No redirect found for key: ${redirectKey}`;
+      }
+    }
+  </script>
 </Layout>

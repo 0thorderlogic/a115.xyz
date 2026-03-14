@@ -1,8 +1,4 @@
-import type {
-  CalendarEvent,
-  RawGoogleCalendarEvent,
-  RawGoogleCalendarResponse,
-} from "./types";
+import type { CalendarEvent, RawGoogleCalendarEvent, RawGoogleCalendarResponse } from "./types";
 
 interface CalendarWindow {
   timeMin: string;
@@ -28,9 +24,7 @@ function normalizeCalendarEvent(
 
   const end = event.end?.dateTime ?? event.end?.date ?? null;
   const title = event.summary?.trim() || "Untitled";
-  const attendeesCount = Array.isArray(event.attendees)
-    ? event.attendees.length
-    : 0;
+  const attendeesCount = Array.isArray(event.attendees) ? event.attendees.length : 0;
 
   return {
     id: event.id || `event-${index}`,
@@ -61,7 +55,9 @@ export async function fetchCalendarEvents(
   });
 
   const response = await fetch(
-    `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?${params.toString()}`,
+    `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(
+      calendarId,
+    )}/events?${params.toString()}`,
   );
 
   if (!response.ok) {

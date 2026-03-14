@@ -33,9 +33,7 @@ const sortedYears = Object.entries(groupedByYear).sort(
       sortedYears.map(([year, items]) => (
         <details class="group">
           <summary class="flex items-center gap-4 cursor-pointer list-none select-none py-2">
-            <h2 class="title-2 text-4xl md:text-5xl text-gruv-yellow m-0">
-              {year}
-            </h2>
+            <h2 class="title-2 text-4xl md:text-5xl text-gruv-yellow m-0">{year}</h2>
             <div class="flex-grow h-px bg-gruv-gray/20 group-hover:bg-gruv-gray/40 transition-colors" />
             <div class="text-gruv-gray/50 group-open:rotate-180 transition-transform duration-200">
               <svg
@@ -58,9 +56,7 @@ const sortedYears = Object.entries(groupedByYear).sort(
                 <div class="absolute -left-[18px] sm:-left-[34px] top-[26px] w-[18px] sm:w-[34px] h-[2px] bg-gruv-gray/20 hidden sm:block group-hover/card:bg-gruv-gray/40 transition-colors" />
 
                 <div class="flex justify-between items-start gap-4 mb-2">
-                  <h3 class="text-lg font-bold text-gruv-fg m-0 leading-tight">
-                    {item.title}
-                  </h3>
+                  <h3 class="text-lg font-bold text-gruv-fg m-0 leading-tight">{item.title}</h3>
                   <span class="text-xs sm:text-sm font-mono text-gruv-gray whitespace-nowrap shrink-0 mt-0.5">
                     {item.date}
                   </span>
@@ -73,6 +69,7 @@ const sortedYears = Object.entries(groupedByYear).sort(
                   <a
                     href={item.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gruv-blue/10 text-gruv-blue rounded hover:bg-gruv-blue/20 transition-colors text-xs sm:text-sm font-mono shrink-0 whitespace-nowrap"
                   >
                     <svg

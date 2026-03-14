@@ -44,8 +44,10 @@ const sortedYears = Object.entries(groupedByYear).sort(
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          ><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"
-          ></path><circle cx="5" cy="19" r="1"></circle></svg
+          ><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle
+            cx="5"
+            cy="19"
+            r="1"></circle></svg
         >
         RSS Feed
       </a>
@@ -56,9 +58,7 @@ const sortedYears = Object.entries(groupedByYear).sort(
         sortedYears.map(([year, posts]) => (
           <details class="group" open>
             <summary class="flex items-center gap-4 cursor-pointer list-none select-none py-2">
-              <h2 class="title-2 text-4xl md:text-5xl text-gruv-yellow m-0">
-                {year}
-              </h2>
+              <h2 class="title-2 text-4xl md:text-5xl text-gruv-yellow m-0">{year}</h2>
               <div class="flex-grow h-px bg-gruv-gray/20 group-hover:bg-gruv-gray/40 transition-colors" />
               <div class="text-gruv-gray/50 group-open:rotate-180 transition-transform duration-200">
                 <svg

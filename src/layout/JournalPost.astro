@@ -8,13 +8,11 @@ interface Props {
 }
 
 import { name, url } from "../../consts";
-import Navbar from "../components/ui/Navbar.astro";
 import Footer from "../components/ui/Footer.astro";
-const { title, description, image = "/images/linkpreview.png", ogType = "website" } =
-  Astro.props;
+const { title, description, image = "/images/linkpreview.png", ogType = "website" } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? url;
-const pageTitle = `${name}'s ${title}`;
-const pageDescription = description ?? "Personal website and journal.";
+const pageTitle = title;
+const pageDescription = description ?? title;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const previewImageUrl = new URL(image, siteUrl).toString();
 ---
@@ -43,11 +41,11 @@ const previewImageUrl = new URL(image, siteUrl).toString();
   </head>
   <body>
     <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5">
-    <header class="pt-6">
+      <header class="pt-6">
         <a href="/journal">back to journal</a>
         <h1 class="title-1 mt-2">{title}</h1>
-    </header>
-      <main class="">
+      </header>
+      <main>
         <slot />
       </main>
       <Footer />

@@ -1,18 +1,18 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-import { name, url } from '../../consts';
-import type { APIContext } from 'astro';
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+import { name, url } from "../../consts";
+import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
-  const journalEntries = await getCollection('journal');
+  const journalEntries = await getCollection("journal");
 
   const sortedEntries = journalEntries.sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
 
   return rss({
     title: `${name}'s Journal`,
-    description: 'A collection of thoughts and writings.',
+    description: "A collection of thoughts and writings.",
     site: context.site || url,
     items: sortedEntries.map((post) => ({
       title: post.data.title,
@@ -20,6 +20,6 @@ export async function GET(context: APIContext) {
       description: post.data.description,
       link: `/journal/${post.slug}/`,
     })),
-    customData: `<language>en-uk</language>`,
+    customData: `<language>en-GB</language>`,
   });
 }

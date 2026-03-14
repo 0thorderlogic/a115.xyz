@@ -7,14 +7,12 @@ interface Props {
   ogType?: "website" | "article";
 }
 
-import { name, url } from "../../consts";
+import { pageDescription, name, url } from "../../consts";
 import Navbar from "../components/ui/Navbar.astro";
 import Footer from "../components/ui/Footer.astro";
-const { title, description, image = "/images/linkpreview.png", ogType = "website" } =
-  Astro.props;
+const { title, image = "/images/linkpreview.png", ogType = "website" } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? url;
 const pageTitle = `${name}'s ${title}`;
-const pageDescription = description ?? "Personal website and journal.";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const previewImageUrl = new URL(image, siteUrl).toString();
 ---
