@@ -1,9 +1,30 @@
 import { format, isValid, parseISO } from "date-fns";
 
-let activeTimezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const DEFAULT_TIMEZONE = "Asia/Kolkata";
+
+function isValidTimezone(tz: string): boolean {
+  if (!tz) return false;
+  try {
+    Intl.DateTimeFormat(undefined, { timeZone: tz });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function resolveBrowserTimezone(): string {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return tz || DEFAULT_TIMEZONE;
+  } catch {
+    return DEFAULT_TIMEZONE;
+  }
+}
+
+let activeTimezone: string = resolveBrowserTimezone();
 
 export function setActiveTimezone(tz: string): void {
-  activeTimezone = tz;
+  activeTimezone = isValidTimezone(tz) ? tz : DEFAULT_TIMEZONE;
 }
 
 export function getActiveTimezone(): string {

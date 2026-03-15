@@ -332,8 +332,13 @@ export function initCalendar(events: CalendarEvent[]): void {
   const refs = getCalendarDomRefs();
   if (!refs) return;
 
-  // Restore saved preference or use browser default (select ignores invalid values)
-  refs.timezoneSelect.value = localStorage.getItem("calendar-tz") ?? getActiveTimezone();
+  // Restore saved preference or use browser default
+  const savedTz = localStorage.getItem("calendar-tz") ?? getActiveTimezone();
+  refs.timezoneSelect.value = savedTz;
+  // If the <select> rejected the value (no matching option), fall back to first option
+  if (!refs.timezoneSelect.value) {
+    refs.timezoneSelect.selectedIndex = 0;
+  }
   setActiveTimezone(refs.timezoneSelect.value);
 
   let eventsByDay = buildEventsByDay(events);
