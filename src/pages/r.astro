@@ -54,7 +54,9 @@ if (url) {
         {
           availableKeys.map((k) => (
             <li>
-              <code>{k}</code> → <a href={redirects[k]}>{redirects[k]}</a>
+              <code>{k}</code>
+              {" -> "}
+              <a href={redirects[k]}>{redirects[k]}</a>
             </li>
           ))
         }

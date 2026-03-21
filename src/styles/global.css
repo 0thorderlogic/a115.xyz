@@ -63,18 +63,23 @@ a:hover {
 
 @layer components {
   .title-1 {
-    @apply text-2xl text-gruv-yellow-light font-extrabold font-sans mb-3;
+    @apply text-3xl lg:text-5xl text-gruv-yellow-light font-extrabold font-sans mb-3 tracking-tight;
   }
 
   .title-2 {
-    @apply text-xl text-gruv-purple-light font-bold font-sans mb-2;
+    @apply text-2xl lg:text-4xl text-gruv-purple-light font-bold font-sans mb-2 tracking-tight;
   }
 
   .title-3 {
-    @apply text-lg text-gruv-blue-light font-sans mb-1;
+    @apply text-xl lg:text-3xl text-gruv-blue-light font-sans mb-1 tracking-tight;
   }
 
   .warn {
-    @apply font-bold text-gruv-red-light;
+    @apply text-xs px-2 font-extralight bg-rose-300 text-rose-700 border border-rose-700;
   }
+}
+
+p,
+li {
+  font-size: 18px;
 }
