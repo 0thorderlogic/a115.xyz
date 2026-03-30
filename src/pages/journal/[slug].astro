@@ -91,4 +91,8 @@ const formattedDate = entry.data.date.toLocaleDateString("en-US", {
   .prose-gruvbox blockquote p:last-child {
     @apply mb-0;
   }
+
+  .prose-gruvbox p:has(img) {
+    @apply flex flex-col items-center my-12 text-gruv-gray italic text-sm text-center gap-3;
+  }
 </style>

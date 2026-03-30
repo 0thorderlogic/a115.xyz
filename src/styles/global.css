@@ -75,7 +75,7 @@ a:hover {
   }
 
   .warn {
-    @apply text-xs px-2 font-extralight bg-rose-300 text-rose-700 border border-rose-700;
+    @apply text-xs px-2 py-0.5 ml-2 rounded-md font-medium bg-gruv-bg0-s text-gruv-orange-light border border-gruv-orange/30 tracking-wide inline-block -translate-y-[1px];
   }
 }
 
