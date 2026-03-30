@@ -36,10 +36,10 @@ if (url) {
       <ol>
         <li>
           Open this page with a key query parameter:{" "}
-          <code>/r?key=&lt;key&gt;</code>.
+          <code>/r?key=&lt;key&gt;</code>
         </li>
         <li>
-          Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>.
+          Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>
         </li>
         <li>
           If the key exists, you will be redirected immediately. If it does not, this page will show
@@ -54,7 +54,9 @@ if (url) {
         {
           availableKeys.map((k) => (
             <li>
-              <code>{k}</code> → <a href={redirects[k]}>{redirects[k]}</a>
+              <code>{k}</code>
+              {" -> "}
+              <a href={redirects[k]}>{redirects[k]}</a>
             </li>
           ))
         }

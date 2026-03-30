@@ -42,8 +42,9 @@ const previewImageUrl = new URL(image, siteUrl).toString();
   <body>
     <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5">
       <header class="pt-6">
-        <a href="/journal">back to journal</a>
-        <h1 class="title-1 mt-2">{title}</h1>
+        <h1 class="title-1">
+          <a href="/journal">Journal</a><span class="text-gruv-blue-light">{" / "}</span>{title}
+        </h1>
       </header>
       <main>
         <slot />
