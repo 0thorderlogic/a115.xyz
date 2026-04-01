@@ -33,19 +33,12 @@ if (url) {
 
     <div class="space-y-2">
       <h2 class="title-2">How to use</h2>
-      <ol>
-        <li>
-          Open this page with a key query parameter:{" "}
-          <code>/r?key=&lt;key&gt;</code>
-        </li>
-        <li>
-          Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>
-        </li>
-        <li>
-          If the key exists, you will be redirected immediately. If it does not, this page will show
-          an error and list valid keys below.
-        </li>
-      </ol>
+      <p>
+        <code class="bg-slate-800 px-2 py-1 rounded-sm">/r?key=&lt;key&gt;</code>
+        Example: <a href={`/r?key=${exampleKey}`}>/r?key={exampleKey}</a>
+        If the key exists, you will be redirected immediately. If it does not, this page will show an
+        error and list valid keys below.
+      </p>
     </div>
 
     <div class="space-y-2">

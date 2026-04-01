@@ -23,7 +23,7 @@ const formattedDate = entry.data.date.toLocaleDateString("en-US", {
 
 <Layout title={entry.data.title} description={postDescription} ogType="article">
   {entry.data.description && <h2 class="title-2">{entry.data.description}</h2>}
-  <article class="max-w-3xl prose-gruvbox">
+  <article class="max-w-3xl prose-custom">
     <header>
       <p class="text-sm m-0">
         <time datetime={entry.data.date.toISOString()}>{formattedDate}</time>
@@ -38,61 +38,61 @@ const formattedDate = entry.data.date.toLocaleDateString("en-US", {
 
 <style is:global>
   @reference "../../styles/global.css";
-  /* Basic minimal styling for the markdown output to fit Gruvbox */
-  .prose-gruvbox {
-    @apply text-gruv-fg leading-relaxed;
+  /* Basic minimal styling for the markdown output to fit Tailwind */
+  .prose-custom {
+    @apply text-slate-200 leading-relaxed;
   }
 
-  .prose-gruvbox h1,
-  .prose-gruvbox h2,
-  .prose-gruvbox h3,
-  .prose-gruvbox h4 {
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
     @apply font-bold mt-8 mb-4;
   }
 
-  .prose-gruvbox h1 {
-    @apply text-2xl text-gruv-yellow-light;
+  .prose-custom h1 {
+    @apply text-2xl text-orange-500;
   }
-  .prose-gruvbox h2 {
-    @apply text-xl text-gruv-blue-light;
+  .prose-custom h2 {
+    @apply text-xl text-purple-500;
   }
-  .prose-gruvbox h3 {
-    @apply text-lg text-gruv-purple-light;
+  .prose-custom h3 {
+    @apply text-lg text-cyan-500;
   }
 
-  .prose-gruvbox p {
+  .prose-custom p {
     @apply mb-4;
   }
 
-  .prose-gruvbox ul {
+  .prose-custom ul {
     @apply list-disc list-inside mb-4 pl-4;
   }
 
-  .prose-gruvbox ol {
+  .prose-custom ol {
     @apply list-decimal list-inside mb-4 pl-4;
   }
 
-  .prose-gruvbox pre {
-    @apply bg-gruv-bg0-s p-4 rounded-md overflow-x-auto mb-4 border border-gruv-gray-light/20;
+  .prose-custom pre {
+    @apply bg-slate-900 p-4 rounded-md overflow-x-auto mb-4 border border-slate-300/20;
   }
 
-  .prose-gruvbox code {
-    @apply font-mono text-sm bg-gruv-bg0-s px-1.5 py-0.5 rounded text-gruv-aqua-light;
+  .prose-custom code {
+    @apply font-mono text-sm bg-slate-900 px-1.5 py-0.5 rounded text-teal-400;
   }
 
-  .prose-gruvbox pre code {
+  .prose-custom pre code {
     @apply bg-transparent p-0 text-inherit;
   }
 
-  .prose-gruvbox blockquote {
-    @apply border-l-4 border-gruv-gray-light bg-gruv-bg0-s py-2 pl-4 pr-2 mb-4 italic text-gruv-gray-light;
+  .prose-custom blockquote {
+    @apply border-l-4 border-slate-300 bg-slate-900 py-2 pl-4 pr-2 mb-4 italic text-slate-300;
   }
 
-  .prose-gruvbox blockquote p:last-child {
+  .prose-custom blockquote p:last-child {
     @apply mb-0;
   }
 
-  .prose-gruvbox p:has(img) {
-    @apply flex flex-col items-center my-12 text-gruv-gray italic text-sm text-center gap-3;
+  .prose-custom p:has(img) {
+    @apply flex flex-col items-center my-12 text-slate-400 italic text-sm text-center gap-3;
   }
 </style>

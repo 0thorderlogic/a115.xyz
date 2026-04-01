@@ -3,83 +3,83 @@ import Layout from "../layout/Layout.astro";
 ---
 
 <Layout title="Homepage">
-  <section class="max-w-3xl space-y-8">
+  <section class="w-full space-y-8">
     <div class="space-y-3">
-      <h2 class="title-2">whoami</h2>
-      <p>
-        I'm the co-founder of <a href="https://boxed.love" target="_blank">boxed.love</a>
-      </p>
-      <p>
-        I'm also a Researcher at <a href="https://neuroailabs.in/" target="_blank">Neuro AI Labs</a
-        ><sup><a href="#3">[3]</a></sup>
-      </p>
-      <p>more <sup><a href="#1">[1]</a></sup></p>
+      <main class="title-2 text-slate-200">
+        <div class="mb-2.5">
+          I'm the co-founder of
+          <a href="https://boxed.love" target="_blank" class="text-orange-500!"
+            >The Gifting Company of Calcutta</a
+          >
+        </div>
+
+        <div class="my-2.5">
+          I'm also a Researcher at
+          <a href="https://neuroailabs.in/" target="_blank" class="text-cyan-500!">
+            NeuroAI Fusion Labs
+          </a>
+          <sup><a href="#3">[3]</a></sup>
+        </div>
+
+        <div class="my-2.5">
+          <span class="text-teal-400">singh (at) a115 (dot) xyz</span>
+        </div>
+
+        <div class="my-2.5">
+          more <sup><a href="#1">[1]</a></sup>
+        </div>
+      </main>
     </div>
-    <div class="space-y-2">
-      <h2 class="title-2">Past</h2>
+    <div class="my-10">
+      <h2 class="title-2">In the past</h2>
       <ol>
         <li>
-          I used to work at the <a href="https://www.isical.ac.in" target="_blank"
-            >Indian Statistical Institute, Kolkata</a
+          I used to work at the <a
+            href="https://www.isical.ac.in"
+            target="_blank"
+            class="text-[#C1272D]!">Indian Statistical Institute, Calcutta</a
           ><sup><a href="#2">[2]</a></sup>
         </li>
+        <li>I taught Mathematics to many students from the USA, Canada, and the UK</li>
         <li>
-          I spent my undergrad years teaching Mathematics to many, many of kids around the globe, I
-          still continue at a much smaller scale
-        </li>
-        <li>
-          Spent many years getting a degree in Computer Science and Engineering from <a
+          I spent many years earning a degree in Computer Science and Engineering from <a
             href="https://www.makautwb.ac.in/"
-            >Maulana Abul Kalam Azad University of Technology, West Bengal</a
+            target="_blank"
+            class="text-[#b1ddf6]!">Maulana Abul Kalam Azad University of Technology, West Bengal</a
           >
         </li>
       </ol>
     </div>
-    <div class="space-y-2">
-      <h2 class="title-2">Stuff</h2>
+    <div class="my-10">
+      <h2 class="title-2">Links</h2>
       <ol>
         <li>
-          <a href="https://0thorderlogic.github.io/sense" target="_blank">Sense</a>: real-time web
-          accessibility converting online text into tactile braille
+          Elsewhere:
+          <a href="https://github.com/0thorderlogic" target="_blank" class="text-red-400!">github</a
+          >,
+          <a href="https://bsky.app/profile/a115.xyz" target="_blank" class="text-sky-500!">bsky</a
+          >,
+          <a href="https://x.com/0thorderlogic" target="_blank" class="text-mauve-500!">x</a>
         </li>
         <li>
-          <a href="/pdfs/2023/Map.pdf" target="_blank">Kolkata metro's map</a>
+          <a href="/pdfs/2023/Map.pdf" target="_blank" class="text-purple-500!">Kolkata Metro map</a
+          >
         </li>
         <li>
-          <a href="https://fmhy.net/" target="_blank">Free media heck yeah</a>
+          <a href="https://fmhy.net/" target="_blank" class="text-emerald-500!"
+            >Free media heck yeah</a
+          >
         </li>
         <li>
-          <a href="https://www.amazon.in/hz/wishlist/ls/24YJ3FROBSSHY" target="_blank">Books</a>
-          <span class="warn">goes to amazon.in</span>
-        </li>
-        <li>
-          If you like any aspect of this website, you can check out the theme I developed, and is
-          hosted on <a href="https://github.com/0thorderlogic/man-pages" target="_blank">github</a>
+          <a
+            href="https://www.amazon.in/hz/wishlist/ls/24YJ3FROBSSHY"
+            target="_blank"
+            class="text-amber-500!">Amazon Books Wishlist</a
+          >
         </li>
       </ol>
     </div>
-    <div class="space-y-2">
-      <h2 class="title-2">Elsewhere</h2>
-      <ol>
-        <li>
-          <a href="https://github.com/0thorderlogic" target="_blank">github</a>
-        </li>
-        <li>
-          <a href="https://bsky.app/profile/a115.xyz" target="_blank">bsky</a>
-        </li>
-        <li>
-          <a href="https://x.com/0thorderlogic" target="_blank">x</a>
-          <span class="warn">goes to x.com</span>
-        </li>
-      </ol>
-    </div>
-    <div class="space-y-2">
-      <h2 class="title-2">Email</h2>
-      <p>
-        <span class="text-gruv-aqua-light">singh (at) a115 (dot) xyz</span>
-      </p>
-    </div>
-    <div class="space-y-2">
+    <div class="my-10">
       <h2 class="title-2">Quotes</h2>
       <ol>
         <li>
@@ -91,21 +91,12 @@ import Layout from "../layout/Layout.astro";
         </li>
       </ol>
     </div>
-    <div class="space-y-2">
+    <div class="my-10">
       <h2 class="title-2">Footnotes</h2>
       <div class="text-xl">
-        <sub id="#3"
-          ><sup>[3]</sup>
-          As of April 1<sup>st</sup>, 2026
-        </sub><br />
-        <sub id="#2"
-          ><sup>[2]</sup>
-          As of March 31<sup>st</sup>, 2026
-        </sub><br />
-        <sub id="#1"
-          ><sup>[1]</sup>
-          I don't do much
-        </sub>
+        <sub id="3">[3] As of April 1<sup>st</sup>, 2026 </sub><br />
+        <sub id="2">[2] As of March 31<sup>st</sup>, 2026 </sub><br />
+        <sub id="1">[1] I don't do much </sub>
       </div>
     </div>
   </section>

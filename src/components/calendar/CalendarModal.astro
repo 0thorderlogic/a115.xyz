@@ -4,20 +4,17 @@ import { CALENDAR_IDS } from "../../lib/calendar/constants";
 
 <div
   id={CALENDAR_IDS.modal}
-  class="fixed inset-0 bg-black/80 z-50 hidden justify-center items-center backdrop-blur-sm"
+  class="fixed inset-0 bg-black/80 z-50 hidden justify-center items-center"
 >
   <div
-    class="bg-gruv-bg0-s p-5 rounded-xl w-11/12 max-w-lg border border-gruv-gray/30 max-h-[85vh] flex flex-col shadow-2xl relative pointer-events-auto"
+    class="bg-slate-950 p-5 rounded-sm w-11/12 max-w-lg border border-slate-400/30 max-h-[85vh] flex flex-col shadow-2xl relative pointer-events-auto"
   >
-    <div class="flex justify-between items-start mb-4 border-b border-gruv-gray/20 pb-3">
-      <h3
-        id={CALENDAR_IDS.modalTitle}
-        class="text-xl md:text-2xl font-bold text-gruv-yellow-light m-0 font-mono"
-      >
+    <div class="flex justify-between items-start mb-4 border-b border-slate-400/20 pb-3">
+      <h3 id={CALENDAR_IDS.modalTitle} class="text-xl md:text-2xl font-bold text-purple-400 m-0">
       </h3>
       <button
         id={CALENDAR_IDS.closeModalButton}
-        class="text-gruv-gray-light hover:text-gruv-red transition-colors cursor-pointer text-3xl leading-none"
+        class="text-slate-300 hover:text-red-500 transition-colors cursor-pointer text-3xl leading-none"
         aria-label="Close calendar event modal"
       >
         &times;
@@ -31,7 +28,7 @@ import { CALENDAR_IDS } from "../../lib/calendar/constants";
     </div>
     <div
       id={CALENDAR_IDS.noEventsMessage}
-      class="hidden text-gruv-gray italic py-8 text-center text-lg font-mono"
+      class="hidden text-slate-400 italic py-8 text-center text-lg"
     >
       No events scheduled for this day.
     </div>

@@ -6,16 +6,16 @@ import { CALENDAR_IDS } from "../../lib/calendar/constants";
   <div class="flex items-center justify-between">
     <button
       id={CALENDAR_IDS.prevMonthButton}
-      class="px-3 py-1 bg-gruv-bg0-s rounded text-gruv-fg hover:bg-gruv-gray hover:text-gruv-bg hover:cursor-pointer transition-colors"
+      class="px-3 py-1 bg-slate-900 rounded text-slate-200 hover:bg-slate-400 hover:text-slate-950 hover:cursor-pointer transition-colors"
       aria-label="Previous month"
     >
       {"<-"}
     </button>
     <div class="flex items-center gap-3">
-      <h2 id={CALENDAR_IDS.monthHeader} class="title-2 m-0 text-gruv-yellow-light"></h2>
+      <h2 id={CALENDAR_IDS.monthHeader} class="title-2 m-0"></h2>
       <select
         id={CALENDAR_IDS.timezoneSelect}
-        class="bg-gruv-bg0-s text-gruv-fg text-sm rounded px-2 py-1 border border-gruv-gray/30 hover:border-gruv-gray cursor-pointer transition-colors focus:outline-none focus:border-gruv-yellow"
+        class="bg-slate-900 text-slate-200 text-sm rounded px-2 py-1 border border-slate-400/30 hover:border-slate-400 cursor-pointer transition-colors focus:outline-none focus:border-orange-500"
         aria-label="Select timezone"
       >
         <option value="Asia/Kolkata">IST</option>
@@ -26,7 +26,7 @@ import { CALENDAR_IDS } from "../../lib/calendar/constants";
     </div>
     <button
       id={CALENDAR_IDS.nextMonthButton}
-      class="px-3 py-1 bg-gruv-bg0-s rounded text-gruv-fg hover:bg-gruv-gray hover:text-gruv-bg hover:cursor-pointer transition-colors"
+      class="px-3 py-1 bg-slate-900 rounded text-slate-200 hover:bg-slate-400 hover:text-slate-950 hover:cursor-pointer transition-colors"
       aria-label="Next month"
     >
       {"->"}

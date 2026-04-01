@@ -15,8 +15,8 @@ import {
   formatMonthYear,
   formatReadableDay,
   formatTimeFromIso,
-  setActiveTimezone,
   getActiveTimezone,
+  setActiveTimezone,
 } from "../lib/calendar/date";
 import type { CalendarEvent } from "../lib/calendar/types";
 
@@ -105,20 +105,20 @@ function createTextElement(
 
 function createEventCard(event: CalendarEvent): HTMLElement {
   const card = document.createElement("div");
-  card.className = "flex flex-col p-4 rounded bg-gruv-bg border border-gruv-gray/20 shadow-sm";
+  card.className = "flex flex-col p-4 rounded bg-slate-950 border border-slate-400/20 shadow-sm";
 
-  card.appendChild(createTextElement("div", "font-bold text-gruv-fg mb-1 text-lg", event.title));
+  card.appendChild(createTextElement("div", "font-bold text-slate-200 mb-1 text-lg", event.title));
 
   const timeText = event.isAllDay
     ? "All Day"
     : event.end
       ? `${formatTimeFromIso(event.start)} - ${formatTimeFromIso(event.end)}`
       : formatTimeFromIso(event.start);
-  card.appendChild(createTextElement("div", "text-sm text-gruv-green font-bold mb-2", timeText));
+  card.appendChild(createTextElement("div", "text-sm text-green-500 font-bold mb-2", timeText));
 
   if (event.location) {
     const location = document.createElement("div");
-    location.className = "text-sm text-gruv-yellow mt-1 flex items-start gap-1.5";
+    location.className = "text-sm text-orange-500 mt-1 flex items-start gap-1.5";
     location.appendChild(createTextElement("span", "opacity-80", "📍"));
     location.appendChild(document.createTextNode(event.location));
     card.appendChild(location);
@@ -132,7 +132,7 @@ function createEventCard(event: CalendarEvent): HTMLElement {
     meetLink.href = event.hangoutLink;
     meetLink.target = "_blank";
     meetLink.rel = "noopener noreferrer";
-    meetLink.className = "text-sm text-gruv-aqua flex items-center gap-1.5 hover:underline w-fit";
+    meetLink.className = "text-sm text-teal-500 flex items-center gap-1.5 hover:underline w-fit";
 
     meetLink.appendChild(createTextElement("span", "opacity-80", "🎥"));
     meetLink.appendChild(document.createTextNode("Join Google Meet"));
@@ -142,7 +142,7 @@ function createEventCard(event: CalendarEvent): HTMLElement {
 
   if (event.attendeesCount > 0) {
     const attendees = document.createElement("div");
-    attendees.className = "text-xs text-gruv-gray mt-2 flex items-center gap-1.5";
+    attendees.className = "text-xs text-slate-400 mt-2 flex items-center gap-1.5";
     attendees.appendChild(createTextElement("span", "opacity-80", "👥"));
     attendees.appendChild(document.createTextNode(`${event.attendeesCount} attendee(s)`));
     card.appendChild(attendees);
@@ -152,21 +152,20 @@ function createEventCard(event: CalendarEvent): HTMLElement {
     card.appendChild(
       createTextElement(
         "div",
-        "text-sm text-gruv-fg/80 mt-3 p-3 bg-gruv-bg0-s rounded max-h-32 overflow-y-auto hide-scrollbar break-words whitespace-pre-wrap",
+        "text-sm text-slate-200/80 mt-3 p-3 bg-slate-900 rounded max-h-32 overflow-y-auto hide-scrollbar break-words whitespace-pre-wrap",
         event.description,
       ),
     );
   }
 
   const linkContainer = document.createElement("div");
-  linkContainer.className = "mt-4 pt-3 border-t border-gruv-gray/20 flex justify-end";
+  linkContainer.className = "mt-4 pt-3 border-t border-slate-400/20 flex justify-end";
 
   const viewLink = document.createElement("a");
   viewLink.href = event.link;
   viewLink.target = "_blank";
   viewLink.rel = "noopener noreferrer";
-  viewLink.className =
-    "text-xs font-mono text-gruv-blue-light hover:text-gruv-blue hover:underline";
+  viewLink.className = "text-xs text-blue-400 hover:text-blue-500 hover:underline";
   viewLink.textContent = "View in Calendar";
 
   linkContainer.appendChild(viewLink);
@@ -219,15 +218,15 @@ function createDayCell(
   const isToday = isSameDay(day, new Date());
 
   dayElement.className = `min-h-[80px] md:min-h-[100px] p-1 md:p-2 border rounded flex flex-col transition-colors cursor-pointer ${
-    inCurrentMonth ? "bg-gruv-bg border-gruv-bg0-s" : "bg-transparent border-gruv-bg opacity-40"
+    inCurrentMonth ? "bg-slate-950 border-slate-900" : "bg-transparent border-slate-950 opacity-40"
   } ${
-    isToday ? "border-gruv-yellow bg-gruv-bg0-s/50" : ""
-  } hover:border-gruv-gray hover:bg-gruv-bg0-s`;
+    isToday ? "border-orange-500 bg-slate-900/50" : ""
+  } hover:border-slate-400 hover:bg-slate-900`;
 
   const dateNumber = document.createElement("div");
   dateNumber.className = `text-right text-sm md:text-base font-bold ${
-    inCurrentMonth ? "text-gruv-fg" : "text-gruv-gray-light"
-  } ${isToday ? "text-gruv-yellow-light" : ""}`;
+    inCurrentMonth ? "text-slate-200" : "text-slate-300"
+  } ${isToday ? "text-orange-400" : ""}`;
   dateNumber.textContent = formatDayNumber(day);
   dayElement.appendChild(dateNumber);
 
@@ -239,8 +238,8 @@ function createDayCell(
     chip.title = event.title;
     chip.className = `text-xs px-1 py-0.5 rounded truncate block ${
       event.isAllDay
-        ? "bg-gruv-aqua text-gruv-bg"
-        : "bg-gruv-bg0-s text-gruv-blue-light border border-gruv-blue/30"
+        ? "bg-teal-500 text-slate-950"
+        : "bg-slate-900 text-blue-400 border border-blue-500/30"
     }`;
 
     if (event.isAllDay) {

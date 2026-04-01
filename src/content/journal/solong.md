@@ -1,16 +1,16 @@
 ---
 title: "My departure from Indian Statistical Institute, Calcutta"
 date: 2026-03-31
-description: "Time to move on I guess"
+description: "Some pictures from my time at ISI"
 ---
-
-Some pictures I would like to showcase.
 
 ![Standing in front of PSU](/images/aryan_again.webp)Standing in front of PSU
 
-![PC Mahalanobis Museum and Archives which is now closed](/images/isi/pm-archives-entrance.webp) PC Mahalanobis Museum and Archives
+![PC Mahalanobis Museum and Archives which is now closed](/images/isi/pm-archives-entrance.webp)
+PC Mahalanobis Museum and Archives
 
-![Terrace view of RA Fisher Bhavan](/images/isi/ra-fisher-terrace.webp) Terrace view of RA Fisher Bhavan
+![Terrace view of RA Fisher Bhavan](/images/isi/ra-fisher-terrace.webp) Terrace
+view of RA Fisher Bhavan
 
 <!-- ## Things that spring to mind -->
 
@@ -22,8 +22,9 @@ Some pictures I would like to showcase.
 
 <!-- Truly an instituion inside of an institution, a mirror to PC's true vision for ISI, some might even say that this is what Nehurvian Socialism was all about, remarblke people doing remarkble work. Security Guards, Professors, Students, Researchers, coming together to enjoy a subsidies meal. Where chapaties cost 50 paise, a side cost, 3,5,11 at the most, and an indulegnt lunch costs 26 rupees in total. -->
 
-![Coupons for Rani Bhavan](/images/isi/ranibhavan.jpg) Rani Bhavan, Canteen ISI, K
+![Coupons for Rani Bhavan](/images/isi/ranibhavan.jpg) Rani Bhavan, Canteen ISI
 
-![Inside Rani Bhavan](/images/isi/ranibhavan-2nd.jpg) Best seat in all of Rani Bhavan
+![Inside Rani Bhavan](/images/isi/ranibhavan-2nd.jpg) Best seat in all of Rani
+Bhavan
 
 ![Inside Rani Bhavan](/images/isi/cvpr-asu.jpg) CVPR and ASU entrance

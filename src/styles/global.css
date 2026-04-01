@@ -1,59 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* 
-    Credits to: @morhetz
-    https://github.com/morhetz/gruvbox
-
-    -- is this enough? should I do more? idk. 
-  */
-
-  --color-gruv-bg: #282828;
-  --color-gruv-bg0-s: #1d2021;
-  --color-gruv-fg: #ebdbb2;
-
-  /* Top Row (Standard/Darker) */
-  --color-gruv-red: #cc241d;
-  --color-gruv-green: #98971a;
-  --color-gruv-yellow: #d79921;
-  --color-gruv-blue: #458588;
-  --color-gruv-purple: #b16286;
-  --color-gruv-aqua: #689d6a;
-  --color-gruv-gray: #a89984;
-  --color-gruv-orange: #d65d0e;
-
-  /* Bottom Row (Bright/Lighter) */
-  --color-gruv-gray-light: #928374;
-  --color-gruv-red-light: #fb4934;
-  --color-gruv-green-light: #b8bb26;
-  --color-gruv-yellow-light: #fabd2f;
-  --color-gruv-blue-light: #83a598;
-  --color-gruv-purple-light: #d3869b;
-  --color-gruv-aqua-light: #8ec07c;
-  --color-gruv-orange-light: #fe8019;
-
   /* font */
   --font-inter: "Inter", sans-serif;
-  --font-gsf: "Google Sans Flex", sans-serif;
   --font-sans: var(--font-inter);
-  --font-mono: "Google Sans Code", monospace;
 }
 
 a {
-  text-decoration: none;
-  color: var(--color-gruv-aqua-light);
+  text-decoration: underline;
+  @apply text-rose-500;
 }
 
 a:hover {
   cursor: pointer;
-  text-decoration: underline;
-  color: var(--color-gruv-aqua);
+  text-decoration: none;
+  @apply text-rose-600;
 }
 
 @layer base {
   body {
-    @apply bg-gruv-bg text-gruv-fg font-sans;
+    @apply bg-slate-950 text-slate-200 font-sans;
   }
 
   ol {
@@ -63,23 +30,36 @@ a:hover {
 
 @layer components {
   .title-1 {
-    @apply text-3xl lg:text-5xl text-gruv-yellow-light font-extrabold font-sans mb-3 tracking-tight;
+    @apply text-3xl lg:text-5xl text-slate-50 font-extrabold font-sans mb-3 tracking-tight;
   }
 
   .title-2 {
-    @apply text-2xl lg:text-4xl text-gruv-purple-light font-bold font-sans mb-2 tracking-tight;
+    @apply text-2xl lg:text-4xl text-slate-100 font-bold font-sans mb-2 tracking-tight;
   }
 
   .title-3 {
-    @apply text-xl lg:text-3xl text-gruv-blue-light font-sans mb-1 tracking-tight;
+    @apply text-xl lg:text-3xl text-slate-200 font-sans mb-1 tracking-tight;
   }
 
   .warn {
-    @apply text-xs px-2 py-0.5 ml-2 rounded-md font-medium bg-gruv-bg0-s text-gruv-orange-light border border-gruv-orange/30 tracking-wide inline-block -translate-y-[1px];
+    @apply text-xs px-2 py-0.5 ml-2 font-medium bg-slate-900 text-orange-400 border border-orange-500/30 tracking-wide inline-block -translate-y-[1px];
   }
 }
 
 p,
 li {
-  font-size: 18px;
+  font-size: larger;
+}
+
+/* Hide scrollbar completely and make it inaccessible */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }

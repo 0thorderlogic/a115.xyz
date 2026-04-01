@@ -40,13 +40,13 @@ const previewImageUrl = new URL(image, siteUrl).toString();
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5">
+    <div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5">
       <header class="pt-6">
-        <h1 class="title-1">
-          <a href="/journal">Journal</a><span class="text-gruv-blue-light">{" / "}</span>{title}
+        <h1 class="title-1 mb-0!">
+          <a href="/journal">Journal</a><span class="text-blue-400">{" / "}</span>{title}
         </h1>
       </header>
-      <main>
+      <main class="flex-1 py-6">
         <slot />
       </main>
       <Footer />

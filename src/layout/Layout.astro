@@ -40,14 +40,14 @@ const previewImageUrl = new URL(image, siteUrl).toString();
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5">
-      <header class="pt-6">
-        <h1 class="title-1">{name}'s {title}</h1>
+    <div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5">
+      <header class="pt-6 flex justify-between items-center gap-4 flex-wrap sm:flex-nowrap">
+        <h1 class="title-1 mb-0!">{name}'s {title}</h1>
         <Navbar />
       </header>
-      <main class="flex-1 py-6">
+      <div class="flex-1 py-6">
         <slot />
-      </main>
+      </div>
       <Footer />
     </div>
   </body>
