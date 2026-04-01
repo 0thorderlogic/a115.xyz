@@ -1,0 +1,41 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="404 - Not Found">
+  <section
+    class="w-full flex-1 flex flex-col items-center justify-center text-center space-y-8 py-16 sm:py-24"
+  >
+    <div class="space-y-4">
+      <h1 class="text-8xl sm:text-9xl font-sans font-bold text-orange-500 m-0 tracking-tighter">
+        404
+      </h1>
+      <h2 class="title-2 m-0 text-slate-200!">Page not found</h2>
+      <p class="text-slate-400 max-w-md mx-auto text-lg">
+        Sorry, the page you're looking for doesn't exist or has been moved.
+      </p>
+    </div>
+
+    <div class="pt-4">
+      <a
+        href="/"
+        class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 border border-slate-800 text-slate-300 rounded hover:border-slate-600 hover:text-slate-100 transition-colors text-sm font-bold no-underline! shadow-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-4 h-4 shrink-0"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"></path>
+        </svg>
+        Return Home
+      </a>
+    </div>
+  </section>
+</Layout>
