@@ -5,20 +5,16 @@
       "href": "/"
     },
     {
-      "name": "Journal",
+      "name": "Notes",
       "href": "/journal"
     },
     {
-      "name": "Calendar",
+      "name": "Cal",
       "href": "/calendar"
     },
     {
       "name": "Archive",
       "href": "/archive"
-    },
-    {
-      "name": "GOTO",
-      "href": "/r"
     }
   ]
 }

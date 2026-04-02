@@ -49,6 +49,7 @@ a:hover {
 p,
 li {
   font-size: larger;
+  padding: 0px 10px 10px 0px;
 }
 
 /* Hide scrollbar completely and make it inaccessible */
