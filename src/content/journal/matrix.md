@@ -1,39 +1,43 @@
 ---
-title: "How best to re-learned Matrices for a pre-requisite of Linear Algebra"
+title: "How best to re-learn Matrices for a pre-requisite of Linear Algebra"
 date: 2026-04-06
 description: "A bunch of YouTube Links"
 ---
 
 More links: [Algorithm Archive](https://www.algorithm-archive.org/)
 
-I have a new motto in life, don't do things a chat-bot can.
+I have a new motto in life, don't do things a chatbot can.
 
-In complete honesty a chat-bot can make you a list of things you need to learn x
+In complete honesty a chatbot can make you a list of things you need to learn x
 before you learn y, especially if x,y belong to STEM. But it can't watch and
 tell you if a video is legit which is why I made this list.
 
-- Matrix basics and notation: https://www.youtube.com/watch?v=yRwQ7A6jVLk
-- Matrix transpose: https://www.youtube.com/watch?v=Yaqaz-PO6TI
-- Determinant of a matrix
+Matrix basics and notation: https://www.youtube.com/watch?v=yRwQ7A6jVLk
+
+Matrix transpose: https://www.youtube.com/watch?v=Yaqaz-PO6TI
+
+Determinant of a matrix
   - https://www.youtube.com/watch?v=3ROzG6n4yMc
   - https://www.youtube.com/watch?v=Ip3X9LOh2dk&t=149s
-- Matrix multiplication
+
+Matrix multiplication
   - https://www.youtube.com/watch?v=vzt9c7iWPxs
   - https://www.youtube.com/watch?v=p8VnTCfJHAo
   - https://www.youtube.com/watch?v=XkY2DOUCWMU
-- Matrix inverse
+
+Matrix inverse
   - https://www.youtube.com/watch?v=p8VnTCfJHAo
 
 If there are terms/concepts you don't understand use [Claude](https://claude.ai)
 _FUCK Dario tho_ don't be an idealist use things that help you go faster.
 
-**These four needs to be done all together:**
+**These four need to be done all together:**
 
-Gaussian elimination (or Gauss-Jordan)
+**Gaussian elimination (or Gauss-Jordan)**
 
-Row echelon form (REF)+Reduced Row echelon form (RREF)
+**Row echelon form (REF)** and **Reduced Row echelon form (RREF)**
 
-Systems of linear equations matrix form
+**Systems of linear equations matrix form**
 
 - https://www.youtube.com/watch?v=2j5Ic2V7wq4
 - https://www.youtube.com/watch?v=ShonVncOAB4
@@ -96,4 +100,4 @@ Systems of linear equations matrix form
   change pivot positions, only what's around them.
 
 I can't remove the made with AI footer badge for just this page too much work.
-And I prefer not to ship any javascript
+And I prefer not to ship any JavaScript.

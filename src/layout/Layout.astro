@@ -10,7 +10,8 @@ interface Props {
 import { pageDescription, name, url } from "../../consts";
 import Navbar from "../components/ui/Navbar.astro";
 import Footer from "../components/ui/Footer.astro";
-const { title, image = "/images/linkpreview.png", ogType = "website" } = Astro.props;
+const pageSlug = Astro.url.pathname.replace(/^\//, "").replace(/\/$/, "") || "index";
+const { title, image = `/og/${pageSlug}.png`, ogType = "website" } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? url;
 const pageTitle = `${name}'s ${title}`;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
