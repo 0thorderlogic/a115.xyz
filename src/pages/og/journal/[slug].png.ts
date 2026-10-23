@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { generateOgImage } from "../../../lib/og";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("journal");
+  const entries = await getCollection("journal", ({ data }) => !data.draft);
   return entries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },

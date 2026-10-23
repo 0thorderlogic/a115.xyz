@@ -1,5 +1,10 @@
 ---
 import Layout from "../layout/Layout.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import type { Props as Publication } from "../components/PublicationCard.astro";
+import publicationsData from "../content/publications.json";
+
+const publications = publicationsData as Publication[];
 ---
 
 <Layout title="Homepage">
@@ -9,22 +14,19 @@ import Layout from "../layout/Layout.astro";
         <div class="my-2.5">
           I'm a Researcher at
           <a href="https://neuroailabs.in/" target="_blank" class="text-rose-500!">
-            NeuroAI Fusion Labs
+            NeuroAI Labs
           </a>
           <sup><a href="#3" class="no-underline!">[3]</a></sup>
         </div>
 
-        <div class="mb-2.5">
-          <a href="https://boxed.love" target="_blank" class="text-orange-500!"
-            >Checkout my startup</a
-          > (which is obviously making the world <a
-            href="https://youtu.be/B8C5sjjhsso?si=rc-6iHg9oJ_egCFo"
-            target="_blank">a better place</a
-          >)
-        </div>
-
         <div class="my-2.5">
           <span class="text-teal-400">sanket (at) a115 (dot) xyz</span>
+        </div>
+        <div class="my-2.5">
+          <span class="text-orange-400">aryan115csphy (at) gmail (dot) com</span>
+        </div>
+        <div class="my-2.5">
+          <span class="text-purple-400">aryan (at) neuroailabs (dot) in</span>
         </div>
 
         <div class="my-2.5">
@@ -32,6 +34,18 @@ import Layout from "../layout/Layout.astro";
         </div>
       </main>
     </div>
+
+    <div class="my-10 space-y-4">
+      <h2 class="title-2">Publications</h2>
+      {
+        publications.length > 0 ? (
+          publications.map((pub) => <PublicationCard {...pub} />)
+        ) : (
+          <p class="text-slate-400">Nothing here yet.</p>
+        )
+      }
+    </div>
+
     <div class="my-10">
       <h2 class="title-2">In the past</h2>
       <ul>
@@ -58,6 +72,11 @@ import Layout from "../layout/Layout.astro";
         <li>
           <a href="/r">Redirect</a> or "GOTO" page, my one-stop link shortner/redirect page
         </li>
+        <p>
+          Do note that even though I have accounts at these places I really dislike social media,
+          and as such don't update it. Any relevant information will be present on this website or
+          can be requested via email listed on the top of this page.
+        </p>
         <li>
           Elsewhere:
           <a href="https://github.com/0thorderlogic" target="_blank" class="text-red-400!">github</a

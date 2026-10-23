@@ -1,0 +1,286 @@
+---
+export interface PubAuthor {
+  /** Display name, e.g. "Ada Lovelace" */
+  name: string;
+  /** ORCID iD — bare ("0000-0002-1825-0097") or a full URL */
+  orcid?: string;
+  /** Personal / lab site */
+  website?: string;
+  /** Set true for yourself so the name is emphasised */
+  self?: boolean;
+}
+
+export interface PubLink {
+  /** Button label, e.g. "PDF", "DOI", "arXiv", "GitHub", "Zenodo" */
+  label: string;
+  href: string;
+}
+
+export interface Props {
+  title: string;
+  /** Canonical link for the paper — turns the title into a link */
+  url?: string;
+  authors?: PubAuthor[];
+  year?: string | number;
+  /** Journal / conference name — hidden entirely when omitted */
+  venue?: string;
+  /** arXiv preprint — bare id ("2401.00001") or a full URL */
+  arxiv?: string;
+  /** Only two states: "Preprint" (not peer reviewed yet) or "Published" */
+  status: "Preprint" | "Published";
+  /** Paper artefacts: PDF, DOI, slides, poster… (arXiv has its own field) */
+  links?: PubLink[];
+  /** Source-code repositories / archives */
+  code?: PubLink[];
+}
+
+const {
+  title,
+  url,
+  authors = [],
+  year,
+  venue,
+  arxiv,
+  status = "Preprint",
+  links = [],
+  code = [],
+} = Astro.props;
+
+const orcidHref = (id: string) => (id.startsWith("http") ? id : `https://orcid.org/${id}`);
+const arxivHref = arxiv
+  ? arxiv.startsWith("http")
+    ? arxiv
+    : `https://arxiv.org/abs/${arxiv}`
+  : null;
+const published = status === "Published";
+---
+
+<article class:list={["frame", published ? "frame-positive" : "frame-negative"]}>
+  <div class="frame-holes" aria-hidden="true"></div>
+  <div class="frame-body space-y-4">
+    <header class="space-y-2">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h3 class="text-lg sm:text-xl font-bold text-slate-100 m-0 leading-snug">
+          {
+            url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-100! no-underline! hover:text-blue-500!"
+              >
+                {title}
+              </a>
+            ) : (
+              title
+            )
+          }
+        </h3>
+        {
+          (venue || year) && (
+            <span class="text-xs sm:text-sm text-slate-400 shrink-0">
+              {venue && <span>{venue}</span>}
+              {venue && year && <span class="text-slate-600"> · </span>}
+              {year && <span>{year}</span>}
+            </span>
+          )
+        }
+      </div>
+
+      <span class="stamp" data-published={published}>{status}</span>
+
+      {
+        authors.length > 0 && (
+          <div class="flex flex-wrap items-center gap-x-1 gap-y-1.5 text-sm text-slate-400">
+            {authors.map((author, i) => (
+              <span class="inline-flex items-center gap-1">
+                {author.website ? (
+                  <a
+                    href={author.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class:list={[
+                      "no-underline! hover:underline!",
+                      author.self ? "text-slate-100! font-semibold" : "text-slate-300!",
+                    ]}
+                  >
+                    {author.name}
+                  </a>
+                ) : (
+                  <span
+                    class:list={[author.self ? "text-slate-100 font-semibold" : "text-slate-300"]}
+                  >
+                    {author.name}
+                  </span>
+                )}
+
+                {author.orcid && (
+                  <a
+                    href={orcidHref(author.orcid)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex shrink-0 no-underline!"
+                    aria-label={`${author.name} on ORCID`}
+                    title={`${author.name} — ORCID iD`}
+                  >
+                    <svg viewBox="0 0 256 256" class="w-4 h-4" aria-hidden="true">
+                      <path
+                        d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"
+                        fill="#A6CE39"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.4h24.5c34.9 0 42.9-26.5 42.9-39.8 0-21.5-13.7-39.8-43.7-39.8h-23.7v79.6zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.5 10.1 10.1z"
+                      />
+                    </svg>
+                  </a>
+                )}
+
+                {i < authors.length - 1 && <span class="text-slate-600">,</span>}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    {
+      (arxivHref || links.length > 0) && (
+        <div class="flex flex-wrap gap-2">
+          {arxivHref && (
+            <a
+              href={arxivHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 text-red-400! rounded hover:bg-red-500/20 transition-colors text-xs sm:text-sm no-underline!"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                class="size-3.5 sm:size-4"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M3.8423 0a1.0037 1.0037 0 0 0-.922.6078c-.1536.3687-.0438.6275.2938 1.1113l6.9185 8.3597-1.0223 1.1058a1.0393 1.0393 0 0 0 .003 1.4229l1.2292 1.3135-5.4391 6.4444c-.2803.299-.4538.823-.2971 1.1986a1.0253 1.0253 0 0 0 .9585.635.9133.9133 0 0 0 .6891-.3405l5.783-6.126 7.4902 8.0051a.8527.8527 0 0 0 .6835.2597.9575.9575 0 0 0 .8777-.6138c.1577-.377-.017-.7502-.306-1.1407l-7.0518-8.3418 1.0632-1.13a.9626.9626 0 0 0 .0089-1.3165L4.6336.4639s-.3733-.4535-.768-.463zm0 .272h.0166c.2179.0052.4874.2715.5644.3639l.005.006.0052.0055 10.169 10.9905a.6915.6915 0 0 1-.0072.945l-1.0666 1.133-1.4982-1.7724-8.5994-10.39c-.3286-.472-.352-.6183-.2592-.841a.7307.7307 0 0 1 .6704-.4401Zm14.341 1.5701a.877.877 0 0 0-.6554.2418l-5.6962 6.1584 1.6944 1.8319 5.3089-6.5138c.3251-.4335.479-.6603.3247-1.0292a1.1205 1.1205 0 0 0-.9763-.689zm-7.6557 12.2823 1.3186 1.4135-5.7864 6.1295a.6494.6494 0 0 1-.4959.26.7516.7516 0 0 1-.706-.4669c-.1119-.2682.0359-.6864.2442-.9083l.0051-.0055.0047-.0055z" />
+              </svg>
+              arXiv
+            </a>
+          )}
+          {links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-500/10 text-blue-500! rounded hover:bg-blue-500/20 transition-colors text-xs sm:text-sm no-underline!"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      code.length > 0 && (
+        <div class="space-y-1.5">
+          <div class="text-xs text-slate-500 font-mono uppercase tracking-wide">Source code</div>
+          <div class="flex flex-wrap gap-2">
+            {code.map((repo) => (
+              <a
+                href={repo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/10 text-emerald-400! rounded hover:bg-emerald-500/20 transition-colors text-xs sm:text-sm no-underline!"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="size-3.5 sm:size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+                  />
+                </svg>
+                {repo.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+  {
+    year && (
+      <div class="frame-edge" aria-hidden="true">
+        {year}
+      </div>
+    )
+  }
+</article>
+
+<style>
+  .frame {
+    --ink: #c0566e; /* muted rose: preprint, still a negative */
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    background: #0f172a;
+    border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+    border-radius: 3px;
+    position: relative;
+  }
+  .frame-positive {
+    --ink: #4a9d7f; /* muted emerald: published, developed print */
+  }
+  .frame-holes {
+    background-color: color-mix(in srgb, var(--ink) 12%, #020617);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='26'%3E%3Crect x='6' y='6' width='10' height='14' rx='2.5' fill='%23020617'/%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+    border-right: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+  .frame-body {
+    isolation: isolate;
+    padding: 1rem 1rem 1.1rem 1.1rem;
+    min-width: 0;
+  }
+  .frame-edge {
+    writing-mode: vertical-rl;
+    font:
+      600 0.65rem/1 ui-monospace,
+      monospace;
+    letter-spacing: 0.25em;
+    color: var(--ink);
+    opacity: 0.6;
+    padding: 1rem 0.45rem;
+    border-left: 1px dashed color-mix(in srgb, var(--ink) 25%, transparent);
+    text-align: end;
+  }
+  .stamp {
+    position: absolute;
+    right: 3.2rem;
+    bottom: 0.9rem;
+    z-index: -1; /* behind the text, inside .frame-body's stacking context */
+    transform: rotate(-9deg);
+    font:
+      800 clamp(1.6rem, 6vw, 2.6rem) / 1 ui-monospace,
+      monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    color: var(--ink);
+    border: 3px double var(--ink);
+    opacity: 0.2;
+    pointer-events: none;
+    user-select: none;
+    /* ink-worn look */
+    mask-image: radial-gradient(circle at 30% 40%, #000 55%, rgba(0, 0, 0, 0.55) 100%);
+  }
+  .stamp[data-published="true"] {
+    border-style: solid;
+    opacity: 0.26;
+  }
+</style>

@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Supervised Cross-Modal Feature Alignment for Zero-Wearable Freezing of Gait Detection in Parkinsonism",
+    "url": "https://arxiv.org/abs/2609.08317",
+    "year": 2026,
+    "arxiv": "2609.08317",
+    "status": "Preprint",
+    "authors": [
+      { "name": "Aryan Singh", "self": true, "website": "https://a115.xyz" },
+      { "name": "Chandan Biswas", "website": "https://scholar.google.com/citations?user=W2JbsRQAAAAJ&hl=en"}
+    ],
+    "links": [{ "label": "PDF", "href": "https://arxiv.org/pdf/2609.08317" }]
+  },
+  {
+    "title": "Freezing of Gait Prediction Under Spatial Occlusion: An IMU-Supervised Cross-Modal Distillation Approach",
+    "url": "https://arxiv.org/abs/2609.09826",
+    "year": 2026,
+    "arxiv": "2609.09826",
+    "status": "Preprint",
+    "authors": [
+      { "name": "Chandan Biswas", "website": "https://scholar.google.com/citations?user=W2JbsRQAAAAJ&hl=en"},
+      { "name": "Aryan Singh", "self": true, "website": "https://a115.xyz" },
+      { "name": "Anabik Pal", "website": "https://iiserbpr.ac.in/people/profile/anabikpal" }
+    ],
+    "links": [{ "label": "PDF", "href": "https://arxiv.org/pdf/2609.09826" }]
+  }
+]

@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layout/JournalPost.astro";
 
 export async function getStaticPaths() {
-  const journalEntries = await getCollection("journal");
+  const journalEntries = await getCollection("journal", ({ data }) => !data.draft);
   return journalEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -94,5 +94,21 @@ const formattedDate = entry.data.date.toLocaleDateString("en-US", {
 
   .prose-custom p:has(img) {
     @apply flex flex-col items-center my-12 text-slate-400 italic text-sm text-center gap-3;
+  }
+
+  .prose-custom .photo-pair {
+    @apply grid grid-cols-2 gap-3 my-12 items-start;
+  }
+
+  .prose-custom .photo-pair figure {
+    @apply m-0 flex flex-col gap-2 min-w-0;
+  }
+
+  .prose-custom .photo-pair img {
+    @apply w-full aspect-3/4 object-cover m-0;
+  }
+
+  .prose-custom .photo-pair figcaption {
+    @apply text-slate-400 italic text-sm text-center;
   }
 </style>

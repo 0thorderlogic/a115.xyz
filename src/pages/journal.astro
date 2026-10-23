@@ -3,7 +3,7 @@ import Layout from "../layout/Layout.astro";
 import { getCollection } from "astro:content";
 
 // Fetch all journal entries
-const allJournalEntries = await getCollection("journal");
+const allJournalEntries = await getCollection("journal", ({ data }) => !data.draft);
 
 // Sort entries by date (newest first)
 const sortedEntries = allJournalEntries.sort(

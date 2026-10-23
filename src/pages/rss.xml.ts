@@ -4,7 +4,7 @@ import { name, url } from "../../consts";
 import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
-  const journalEntries = await getCollection("journal");
+  const journalEntries = await getCollection("journal", ({ data }) => !data.draft);
 
   const sortedEntries = journalEntries.sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
