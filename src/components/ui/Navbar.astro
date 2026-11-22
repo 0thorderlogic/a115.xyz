@@ -11,7 +11,7 @@ const { links } = navData;
       links.map((link) => (
         <li>
           <a
-            class="text-emerald-500! hover:text-emerald-400! no-underline! hover:no-underline! font-bold tracking-tight transition-colors text-md md:text-lg"
+            class="text-emerald-600! hover:text-emerald-700! no-underline! hover:no-underline! font-bold tracking-tight transition-colors text-md md:text-lg"
             href={link.href}
           >
             {link.name}
@@ -27,22 +27,34 @@ const { links } = navData;
       id="mobile-menu-btn"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
-      class="flex items-center gap-1 px-3 py-1.5 rounded-md border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors font-bold tracking-tight text-emerald-500"
+      class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-slate-300 bg-white hover:border-slate-400/60 transition-colors shadow-sm font-bold tracking-tight text-emerald-600 cursor-pointer"
     >
       <span>goto</span>
-      <span id="caret" class="inline-block transition-transform duration-200">&#8964;</span>
+      <svg
+        id="caret"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="size-4 transition-transform duration-200"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+          clip-rule="evenodd"></path>
+      </svg>
     </button>
 
     <div
       id="mobile-menu"
-      class="absolute right-0 top-full mt-2 w-36 bg-slate-900 border border-slate-700 rounded-md shadow-lg shadow-black/40 overflow-hidden hidden z-50"
+      class="absolute right-0 top-full mt-2 w-36 bg-white border border-slate-300 rounded shadow-sm overflow-hidden hidden z-50"
     >
       <ul class="flex flex-col py-1">
         {
           links.map((link) => (
             <li>
               <a
-                class="block px-4 py-2.5 text-emerald-500! hover:text-emerald-400! no-underline! font-bold tracking-tight transition-colors text-base"
+                class="block px-4 py-2.5 text-emerald-600! hover:text-emerald-700! no-underline! hover:no-underline! hover:bg-slate-100 font-bold tracking-tight transition-colors text-base"
                 href={link.href}
               >
                 {link.name}

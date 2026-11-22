@@ -10,25 +10,23 @@ const publications = publicationsData as Publication[];
 <Layout title="Homepage">
   <section class="w-full space-y-8">
     <div class="space-y-3">
-      <main class="title-2 text-slate-200">
+      <main class="title-2 text-slate-600">
         <div class="my-2.5">
-          I'm a Researcher at
+          I'm a Researcher at&nbsp;
           <a href="https://neuroailabs.in/" target="_blank" class="text-rose-500!">
             NeuroAI Labs
           </a>
           <sup><a href="#3" class="no-underline!">[3]</a></sup>
         </div>
-
         <div class="my-2.5">
-          <span class="text-teal-400">sanket (at) a115 (dot) xyz</span>
+          <span class="text-orange-400!">aryan115csphy (at) gmail (dot) com</span>
         </div>
         <div class="my-2.5">
-          <span class="text-orange-400">aryan115csphy (at) gmail (dot) com</span>
+          <span class="text-purple-400!">aryan (at) neuroailabs (dot) in</span>
         </div>
         <div class="my-2.5">
-          <span class="text-purple-400">aryan (at) neuroailabs (dot) in</span>
+          <span class="text-teal-400!">sanket (at) a115 (dot) xyz</span>
         </div>
-
         <div class="my-2.5">
           more <sup><a href="#1" class="no-underline!">[1]</a></sup>
         </div>
@@ -36,7 +34,7 @@ const publications = publicationsData as Publication[];
     </div>
 
     <div class="my-10 space-y-4">
-      <h2 class="title-2">Publications</h2>
+      <h2 class="title-2">Selected Publications</h2>
       {
         publications.length > 0 ? (
           publications.map((pub) => <PublicationCard {...pub} />)
@@ -44,6 +42,18 @@ const publications = publicationsData as Publication[];
           <p class="text-slate-400">Nothing here yet.</p>
         )
       }
+      <p>
+        Checkout my&nbsp;
+        <a
+          href="https://scholar.google.com/citations?user=aB9sHhgAAAAJ&hl=en"
+          target="_blank"
+          class="text-blue-500!">Google Scholar</a
+        >,&nbsp;
+        <a href="#" target="_blank" class="text-blue-900!">DBLP</a>, and &nbsp;
+        <a href="https://orcid.org/0009-0003-0495-627X" target="_blank" class="text-lime-600!"
+          >ORCiD</a
+        >&nbsp; for more.
+      </p>
     </div>
 
     <div class="my-10">
@@ -61,7 +71,7 @@ const publications = publicationsData as Publication[];
           I spent many years earning a degree in Computer Science and Engineering from <a
             href="https://www.makautwb.ac.in/"
             target="_blank"
-            class="text-[#b1ddf6]!">Maulana Abul Kalam Azad University of Technology, West Bengal</a
+            class="text-blue-600!">Maulana Abul Kalam Azad University of Technology, West Bengal</a
           >
         </li>
       </ul>
@@ -80,9 +90,9 @@ const publications = publicationsData as Publication[];
         <li>
           Elsewhere:
           <a href="https://github.com/0thorderlogic" target="_blank" class="text-red-400!">github</a
-          >,
+          >,&nbsp;
           <a href="https://bsky.app/profile/a115.xyz" target="_blank" class="text-sky-500!">bsky</a
-          >,
+          >,&nbsp;
           <a href="https://x.com/0thorderlogic" target="_blank" class="text-mauve-500!">x</a>
         </li>
         <li>
